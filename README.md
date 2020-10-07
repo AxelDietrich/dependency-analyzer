@@ -1,6 +1,6 @@
 ### **Dependency Analyzer**
 
-Simple NodeJS CLI app that reads a websites.csv (present inside the project) and analyzes the size in bytes and dependencies of the specified websites, either via local file system or HTTP urls. Modify this file in order to specify your target websites.
+Simple NodeJS CLI app that reads a websites.csv (present inside the project) and analyzes the size in bytes and dependencies of the specified websites, either via local file system or HTTP urls. Modify this file, respecting the given format, in order to specify your target websites.
 
 ##### **How to use:**
 
