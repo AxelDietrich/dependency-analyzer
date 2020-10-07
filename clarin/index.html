@@ -1,0 +1,2189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Noticias. Últimas noticias de Argentina y el Mundo | Clarín</title>
+<script async src="https://www.clarin.com/commons/js/prebid2.16.0_r_a.js?v0.1"></script>
+<script>
+
+    var desktopSizes = [
+        [970, 250],
+        [728, 90],
+        [300, 250],
+        [950, 90],
+        [970, 90],
+        [970, 300],
+        [950, 300]
+    ];
+    var tabletSizes = [
+        [728, 90],
+        [950, 90],
+        [300, 250],
+        [950, 300]
+    ];
+    var phoneSizes = [
+        [320, 100],
+        [320, 50],
+        [300, 600],
+        [300, 250]
+    ];
+    var allSizes = [
+        [970, 250],
+        [970, 90],
+        [970, 300],
+        [728,90],
+        [320, 100],
+        [320, 50],
+        [300, 600],
+        [300, 250],
+        [950, 90],
+        [950, 300]
+    ];
+
+    var caja_sizes = [
+        [300, 250],
+        [300, 600]
+    ];
+    var horizontal_sizes = [
+        [728, 90],
+        [970, 250],
+        [950,90],
+        [950,300],
+        [320, 100],
+        [320, 50]
+    ];
+    var PREBID_TIMEOUT = 2000;
+    var FAILSAFE_TIMEOUT = 3000;
+
+    var adUnits = [
+        {
+            code: '/242767168/clarin/home/horizontal1',
+            mediaTypes: {
+                banner: {
+                    sizes: horizontal_sizes
+                }
+            },
+            bids: [{
+                bidder: 'appnexus',
+                params: {
+                    placementId: 16367017,
+                    keywords:{
+                        path:['home']
+                    }
+                }}]
+        },{
+            code: '/242767168/clarin/home/caja1',
+            mediaTypes: {
+                banner: {
+                    sizes: caja_sizes
+                }
+            },
+            bids: [{
+                bidder: 'appnexus',
+                params: {
+                    placementId: 16367018,
+                    keywords:{
+                        path:['home']
+                    }
+                }},
+                {
+                    bidder: 'rubicon',
+                    params: {
+                        accountId: '11206',
+                        siteId: '28026',
+                        zoneId: '174178',
+                    }}]
+        },{
+            code: '/242767168/clarin/home/caja2',
+            mediaTypes: {
+                banner: {
+                    sizes: caja_sizes
+                }
+            },
+            bids: [{
+                bidder: 'appnexus',
+                params: {
+                    placementId: 16367019,
+                    keywords:{
+                        path:['home']
+                    }
+                }},
+                {
+                    bidder: 'rubicon',
+                    params: {
+                        accountId: '11206',
+                        siteId: '28026',
+                        zoneId: '174180',
+                    }}]
+        }
+    ];
+
+
+
+    // ======== DO NOT EDIT BELOW THIS LINE =========== //
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    googletag.cmd.push(function() {
+        googletag.pubads().disableInitialLoad();
+    });
+
+    var pbjs = pbjs || {};
+    pbjs.que = pbjs.que || [];
+
+    pbjs.que.push(function() {
+        pbjs.addAdUnits(adUnits);
+        pbjs.setConfig({priceGranularity: "dense"});
+        pbjs.setConfig({
+            sizeConfig: [{
+                'mediaQuery': '(min-width: 1025px)',
+                'sizesSupported': desktopSizes,
+                'labels': ['desktop']
+            }, {
+                'mediaQuery': '(min-width: 768px) and (max-width: 1024px)',
+                'sizesSupported': tabletSizes,
+                'labels': ['tablet']
+            }, {
+                'mediaQuery': '(min-width: 320px) and (max-width: 812px)',
+                'sizesSupported': phoneSizes,
+                'labels': ['phone']
+            }]
+        });
+        if ("home" == "home") {
+            pbjs.bidderSettings = {
+                rubicon: {
+                    bidCpmAdjustment: function (bidCpm, bid) {
+                        console.log(bid);
+                        console.log('bidCpm is : ' + bidCpm);
+                        console.log('New bidCpm is : ' + bidCpm * 0.88);
+                        return bidCpm * 0.88;
+                    }
+                }
+            };
+        }
+        pbjs.requestBids({
+            bidsBackHandler: initAdserver,
+            timeout: PREBID_TIMEOUT
+        });
+    });
+
+
+
+
+    function initAdserver() {
+        function initAdServerInterval() {
+            if (googletag.pubadsReady) {
+                if (pbjs.initAdserverSet) return;
+                pbjs.initAdserverSet = true;
+                googletag.cmd.push(function() {
+                    pbjs.que.push(function() {
+                        pbjs.setTargetingForGPTAsync();
+                        googletag.pubads().refresh();
+                        googletag.cmd.push(function () {
+                            console.log("###### Window.log: ",window.log);
+                            var privateDefineSlot = googletag.defineSlot.bind(googletag);
+                            googletag.defineSlot = function () {
+                                var result = privateDefineSlot.apply(void 0, arguments);
+                                setTimeout(function() {
+                                    googletag.pubads().refresh([result]);
+                                }, 10);
+                                return result;
+                            };
+                        });
+                    });
+                });
+                clearInterval(intervalId);
+            };
+        };
+        intervalId=setInterval(initAdServerInterval,100);
+    };
+
+</script>
+<link rel="preconnect" href="https://images.clarin.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Language" content="es" />
+<meta name="LANGUAGE" content="es" />
+<meta name="DISTRIBUTION" content="Global" />
+<meta name="ROBOTS" content="all" />
+<meta name="AUTHOR" content="Clarin.com" />
+<meta name="classification" content="noticias, información, videos, diario, newspaper" />
+<meta name="Googlebot" content="all" />
+<meta name="GENERATOR" content="Clarin.com | Diario Clarin" />
+<meta name="SUBJECT" content="Clarin.com | Diario Clarin" />
+<meta name="DESCRIPTION" content="Leé las Noticias de Hoy en Clarín. Conocé las Últimas noticias de Argentina y del mundo, información actualizada las 24 horas y en español." />
+<meta name="ABSTRACT" content="Clarin.com noticias de la Argentina y el mundo actualizadas las 24 horas" />
+<meta name="msApplication-ID" content="App" />
+<meta name="msApplication-PackageFamilyName" content="AGEA.MOBILE.Clarin.com_q59wyq0q7cm24" />
+<meta name="msvalidate.01" content="CE3C588E6E296E3426712C2530D6922F" />
+<meta property="og:url" content="www.clarin.com" />
+<meta property="og:title" content="Clarin.com" />
+<meta property="og:image" content="https://www.clarin.com/static/CLAClarin/images/Clarin-sahreing-fbk.jpg" />
+<meta property="og:site_name" content="Clarin.com" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content="Leé las Noticias de Hoy en Clarín. Conocé las Últimas noticias de Argentina y del mundo, información actualizada las 24 horas y en español." />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Clarin.com" />
+<meta name="twitter:description" content="Noticias de la Argentina y el mundo. Información actualizada las 24 horas y en español. Informate ya" />
+<meta name="twitter:image:src" content="https://www.clarin.com/static/CLAClarin/images/Clarin-sahreing-fbk.jpg" />
+<meta name="twitter:image:alt" content="clarin.com" />
+<meta name="twitter:creator" content="@clarincom" />
+<meta name="twitter:site" content="@clarincom" />
+<meta name="twitter:domain" content="clarin.com" />
+<meta property="fb:pages" content="156057357762712" />
+<meta property="fb:pages" content="411588568884731" />
+<meta property="fb:pages" content="349870921749715" />
+<meta property="fb:app_id" content="437491989970687" />
+<meta name="viewport" content="width=device-width, maximum-scale=1, user-scalable=no">
+<meta name="application-name" content="Clarin.com">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link rel="apple-touch-icon" sizes="57x57" href="https://www.clarin.com/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json?v1.0">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet" type="text/css" rel='preload' as='style' />
+<link href="https://static.clarin.com/static/CLAClarin/css/comprimido-home/comprimido-home.css?hash=ca70eea7d3d95a5cb7d2cd10d7117f7b" rel="stylesheet" type="text/css" rel='preload' as='style' />
+<script type="text/javascript" src="https://st-wzb.clarin.com/weizenbock/amazon/min.js?v=0001 "></script>
+<script type="text/javascript" src="https://static.clarin.com/static/CLAClarin/js/clarin.js?hash=206dead12a8697a0637183c2f8ee648e"></script>
+<script type="text/javascript" src="googleAnalytics.js"></script>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="application/ld+json">{"@context": "http://schema.org","@type": "Organization","url": "https://www.clarin.com/","name": "Clarin","sameAs": ["https://www.facebook.com/clarincom/", "https://twitter.com/clarincom"],"foundingDate": "1945-08-28","logo": "https://images.clarin.com/collections/static/ultimas-noticias-de-argentina-y-el-mundo-clarin.svg","description": "Clarín es el diario de referencia de la sociedad argentina. Desde 1945, sus páginas reflejan la realidad local e internacional con un registro intransferible. Su redacción cuenta con el mayor equipo de periodistas del país, reconocido por sus estándares de calidad y rigor profesional."}</script>
+
+<script>
+    var _comscore = _comscore || [];
+    _comscore.push({ c1: "2", c2: "6906409" });
+    (function() {
+    var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+    s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+    el.parentNode.insertBefore(s, el);
+    })();
+    </script>
+<noscript>
+    <img src="https://sb.scorecardresearch.com/p?c1=2&c2=6906409&cv=2.0&cj=1" />
+    </noscript>
+
+<script>
+        function GTM() {
+            try {
+                if(typeof(window.WAuth) == "undefined") {
+                    throw 'waiting WAuth';
+                }
+                var _weizenbockUser = WAuth.getUserSync();
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                    'event': 'sendPageview',
+                    'comscoreParams': {c1: "2", c2: "6906409"}, 
+                    'cd_paseId': (_weizenbockUser && (typeof _weizenbockUser.uid !== 'undefined' ) && ! isNaN( _weizenbockUser.uid) ) ? _weizenbockUser.uid: "-2",
+                    'cd_nsSite': "clarin",
+                    'cd_adblock': adblockFlag() ? "si" : "no",
+                    'cd_nsListaTags': "",
+                    'cd_name': "home.inicio",
+                    'cd_bprivate': window.isPrivateMode,
+                    'cd_autorefresh': refreshChecker.isAutorefresh(),
+                    'cd_anioPublicacion': "2020",
+                    'cd_mesPublicacion': "10",
+                    'cd_diaPublicacion': "06",
+                    'cd_horaPublicacion': "16:38",
+                    'cd_diaSemanaPublicacion': "martes",
+                    'cd_tituloNota': document.title,
+                    'cd_contadorGral': sasClarinHelper.getPaseCounter(),
+                    'cd_blockLW': sasClarinHelper.getPaseStatusSW() ? "si" : "no",
+                    'cd_blockPW': "no",
+                    'cd_hardLW': "no",
+                    'cd_hardPW': "no",
+                    'cd_notaId': "-2",
+                    'cd_temperatura': sasClarinHelper.getTemperatura() ? sasClarinHelper.getTemperatura() : "-2",
+                    'cd_pwAudiencia': sasClarinHelper.getAudiencia("-2"),
+                    'cd_sexo': (_weizenbockUser && (typeof _weizenbockUser.genero !== 'undefined' )) ? _weizenbockUser.genero : "-2",
+                    'cd_edad': (_weizenbockUser && (typeof _weizenbockUser.fechaNacimiento !== 'undefined')) ? sasClarinHelper.getAge(_weizenbockUser.fechaNacimiento) : "-2",
+                    'cd_tipoPagina': "home",
+                    'cd_multimedia': "-2",
+                    'cd_tipoSuscriptor': sasClarinHelper.getTipoSuscripcion("-2"),
+                    'cd_tipoLector': sasClarinHelper.getTipoLector(),
+                    'cd_concursos': "-2",
+                    'cd_referrer': sasClarinHelper.getReferrer(),
+                    'cd_pwCounter': "-2",
+                    'cd_choque': sasClarinHelper.getPaywallChoque(),
+                    'cd_paseFlujo': "-2",
+                    'cd_planSeleccionado': sasClarinHelper.getTipoSuscripcion("-2"),
+                    'cd_infobipId': "-2",
+                    'cd_urlMultimedia': "-2",
+                    'cd_durMultimedia': "-2",
+                    'cd_userDataImportAudiencias': "-2",
+                    'cd_errorCollect': "-2",
+                    'cd_notaTipo': "-2",
+                    'cd_campania': getCampaign(),
+                    'cd_notaShared': "-2"
+                });
+            }catch(e) {
+                console.log(e);
+                setTimeout(function(){
+                    GTM();
+                }, 200);
+            }
+        }
+        GTM();
+    </script>
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-J5TM');</script>
+
+<script type="text/javascript">
+    var _sf_async_config = _sf_async_config || {};
+    /** CONFIGURATION START **/
+     _sf_async_config.uid = 27977;
+    _sf_async_config.domain = 'clarin.com';
+    _sf_async_config.flickerControl = false;
+    _sf_async_config.useCanonical = true;
+    /** CONFIGURATION END **/
+    var _sf_startpt = (new Date()).getTime();
+</script>
+<script async src="//static.chartbeat.com/js/chartbeat_mab.js"></script>
+</head>
+<body>
+<div id="bannerTI">
+<div>
+<div id="flotante3" class="ad-slot" data-adtype="flotante3"></div>
+</div>
+</div>
+
+<div>
+<div id="flotante1" class="ad-slot" data-adtype="flotante1"></div>
+</div>
+
+<div>
+<div id="flotante2" class="ad-slot" data-adtype="flotante2"></div>
+</div>
+<!--[if lt IE 9]>
+    <script src="https://static.clarin.com/static/DESGenerico/js/html5shiv.js"></script>
+<![endif]-->
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-J5TM"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+
+<div id="wb_meter" apikey="BJ7C9NuU" pagegroups="home,portada,free"></div>
+<script type="text/javascript">
+	let matherSegment = "";
+	let pagegroups = document.getElementById("wb_meter").getAttribute('pagegroups').split(',');
+	const MS_value = "; " + document.cookie;
+	const MS_parts = MS_value.split("; _matherSegments=");
+	if (MS_parts.length == 2) {
+	matherSegment = MS_parts.pop().split(";").shift();
+	pagegroups.push(matherSegment);
+	document.getElementById("wb_meter").setAttribute("pagegroups", pagegroups.join(','));  
+	}
+</script>
+<div class="wrapper board-home portada">
+<header>
+<div class="header-content" itemscope itemtype="https://schema.org/WPHeader">
+<nav class="home">
+<ul class="nav navbar-nav">
+<li class="nav__one">
+<ul>
+<li class="dropdown section-menu drop-menu-toggle">
+<a class="dropdown-toggle" data-toggle="dropdown">
+<div class="icon-h"> </div>
+<span class="menu-name">Secciones</span>
+</a>
+<a target="_self" href="https://www.clarin.com/" title="Últimas Noticias de Argentina y el Mundo - Clarín" class="img-logo l_mobile only-mobile"></a>
+<div class="dropdown-menu head-top" style="height: 1000px; overflow: auto;">
+<div class="container-submenu">
+<a href="https://www.clarin.com/" title="Últimas Noticias de Argentina y el Mundo - Clarín" class="img-logo l_drop only-mobile"></a>
+<a href="https://www.clarin.com/suscripciones/landing.html?ob=1" onclick="metricsView('BTN_suscribite','boton-suscribite-menu-lateral');" rel="nofollow" class="btn-e-red-head subscribe" style="display: none;"><p>Suscribite por <span>$10</span></p></a>
+<span class="close only-mobile" aria-expanded="true"></span>
+<ul class="section-menu ">
+<li><a target="_self" onclick="metricsView('MENU_desplegable','seccion-Home');" class="item" href='https://www.clarin.com'>Home</a></li>
+<li><a target="_self" onclick="metricsView('MENU_desplegable','seccion-Último Momento');" class="item" href='https://www.clarin.com/ultimas-noticias/'>Último Momento</a></li>
+<li><a target="_self" onclick="metricsView('MENU_desplegable','seccion-Política');" class="item" href='https://www.clarin.com/politica/'>Política</a></li>
+<li class="sidebar-dropdown item">
+<a href='https://www.clarin.com/economia/' target="_self" class="">Economía </a><i class="fa fa-chevron-down open-sub"></i>
+<div class="sidebar-submenu" style="display: none">
+<ul class="side">
+<li class="item-child" data-name="dolar,divisas,accionesybonos">
+<a target="_self" href="https://www.clarin.com/economia/divisas-acciones-bonos/" onclick="metricsView('MENU_desplegable','seccion-Dólar, divisas, acciones y bonos');">Dólar, divisas, acciones y bonos</a>
+</li>
+</ul>
+<ul class="side">
+<li class="item-child" data-name="mercadoinmobiliario">
+<a target="_self" href="https://www.clarin.com/mercado-inmobiliario/" onclick="metricsView('MENU_desplegable','seccion-Mercado Inmobiliario');">Mercado Inmobiliario</a>
+</li>
+</ul>
+<ul class="side">
+<li class="item-child" data-name="rural">
+<a target="_self" href="https://www.clarin.com/rural/" onclick="metricsView('MENU_desplegable','seccion-Rural');">Rural</a>
+</li>
+</ul>
+</div></li>
+<li class="sidebar-dropdown item">
+<a href='https://www.clarin.com/sociedad/' target="_self" class="">Sociedad </a><i class="fa fa-chevron-down open-sub"></i>
+<div class="sidebar-submenu" style="display: none">
+<ul class="side">
+<li class="item-child" data-name="ciudades">
+<a target="_self" href="https://www.clarin.com/ciudades/" onclick="metricsView('MENU_desplegable','seccion-Ciudades');">Ciudades</a>
+</li>
+</ul>
+<ul class="side">
+<li class="item-child" data-name="policiales">
+ <a target="_self" href="https://www.clarin.com/policiales/" onclick="metricsView('MENU_desplegable','seccion-Policiales');">Policiales</a>
+</li>
+</ul>
+</div></li>
+<li class="sidebar-dropdown item">
+<a href='https://www.clarin.com/opinion/' target="_self" class="">Opinión </a><i class="fa fa-chevron-down open-sub"></i>
+<div class="sidebar-submenu" style="display: none">
+<ul class="side">
+<li class="item-child" data-name="cartasalpais">
+<a target="_self" href="https://www.clarin.com/cartas_al_pais/" onclick="metricsView('MENU_desplegable','seccion-Cartas al País');">Cartas al País</a>
+</li>
+</ul>
+</div></li>
+<li><a target="_self" onclick="metricsView('MENU_desplegable','seccion-Mundo');" class="item" href='https://www.clarin.com/mundo/'>Mundo</a></li>
+<li class="sidebar-dropdown item">
+<a href='https://www.clarin.com/deportes/' target="_self" class="">Deportes </a><i class="fa fa-chevron-down open-sub"></i>
+<div class="sidebar-submenu" style="display: none">
+<ul class="side">
+<li class="item-child" data-name="futbol">
+<a target="_self" href="https://www.clarin.com/deportes/futbol/" onclick="metricsView('MENU_desplegable','seccion-Fútbol');">Fútbol</a>
+</li>
+</ul>
+<ul class="side">
+<li class="item-child" data-name="futbolinternacional">
+<a target="_self" href="https://www.clarin.com/deportes/futbol-internacional/" onclick="metricsView('MENU_desplegable','seccion-Fútbol Internacional');">Fútbol Internacional</a>
+</li>
+</ul>
+<ul class="side">
+<li class="item-child" data-name="seleccion">
+<a target="_self" href="https://www.clarin.com/deportes/seleccion-nacional/" onclick="metricsView('MENU_desplegable','seccion-Selección');">Selección</a>
+</li>
+</ul>
+<ul class="side">
+<li class="item-child" data-name="estadisticas">
+<a target="_self" href="https://www.clarin.com/deportes/estadisticas.html" onclick="metricsView('MENU_desplegable','seccion-Estadísticas');">Estadísticas</a>
+</li>
+</ul>
+<ul class="side">
+<li class="item-child" data-name="ascenso">
+<a target="_self" href="https://www.clarin.com/deportes/ascenso/" onclick="metricsView('MENU_desplegable','seccion-Ascenso');">Ascenso</a>
+</li>
+</ul>
+<ul class="side">
+<li class="item-child" data-name="tenis">
+<a target="_self" href="https://www.clarin.com/deportes/tenis/" onclick="metricsView('MENU_desplegable','seccion-Tenis');">Tenis</a>
+</li>
+</ul>
+<ul class="side">
+<li class="item-child" data-name="rugby">
+<a target="_self" href="https://www.clarin.com/deportes/rugby/" onclick="metricsView('MENU_desplegable','seccion-Rugby');">Rugby</a>
+</li>
+</ul>
+<ul class="side">
+<li class="item-child" data-name="nba">
+<a target="_self" href="https://www.clarin.com/tema/nba.html" onclick="metricsView('MENU_desplegable','seccion-NBA');">NBA</a>
+</li>
+</ul>
+<ul class="side">
+<li class="item-child" data-name="hockey">
+ <a target="_self" href="https://www.clarin.com/deportes/hockey/" onclick="metricsView('MENU_desplegable','seccion-Hockey');">Hockey</a>
+</li>
+</ul>
+<ul class="side">
+<li class="item-child" data-name="agendadeportiva">
+<a target="_self" href="https://www.clarin.com/deportes/agenda-deportiva/" onclick="metricsView('MENU_desplegable','seccion-Agenda Deportiva');">Agenda Deportiva</a>
+</li>
+</ul>
+</div></li>
+<li class="sidebar-dropdown item">
+<a href='https://www.clarin.com/espectaculos/' target="_self" class="">Espectáculos </a><i class="fa fa-chevron-down open-sub"></i>
+<div class="sidebar-submenu" style="display: none">
+<ul class="side">
+<li class="item-child" data-name="tv">
+<a target="_self" href="https://www.clarin.com/espectaculos/tv/" onclick="metricsView('MENU_desplegable','seccion-TV');">TV</a>
+</li>
+</ul>
+<ul class="side">
+<li class="item-child" data-name="cine">
+<a target="_self" href="https://www.clarin.com/espectaculos/cine/" onclick="metricsView('MENU_desplegable','seccion-Cine');">Cine</a>
+</li>
+</ul>
+<ul class="side">
+<li class="item-child" data-name="seriesypeliculas">
+<a target="_self" href="https://www.clarin.com/tema/series-y-peliculas.html" onclick="metricsView('MENU_desplegable','seccion-Series y Películas');">Series y Películas</a>
+</li>
+</ul>
+<ul class="side">
+<li class="item-child" data-name="musica">
+<a target="_self" href="https://www.clarin.com/espectaculos/musica/" onclick="metricsView('MENU_desplegable','seccion-Música');">Música</a>
+</li>
+ </ul>
+<ul class="side">
+<li class="item-child" data-name="teatro">
+<a target="_self" href="https://www.clarin.com/espectaculos/teatro/" onclick="metricsView('MENU_desplegable','seccion-Teatro');">Teatro</a>
+</li>
+</ul>
+<ul class="side">
+<li class="item-child" data-name="carteleradeteatro">
+<a target="_self" href="https://www.clarin.com/espectaculos/teatro/cartelera.html" onclick="metricsView('MENU_desplegable','seccion-Cartelera de teatro');">Cartelera de teatro</a>
+</li>
+</ul>
+<ul class="side">
+<li class="item-child" data-name="carteleradecine">
+<a target="_self" href="https://www.clarin.com/espectaculos/cine/cartelera.html" onclick="metricsView('MENU_desplegable','seccion-Cartelera de cine');">Cartelera de cine</a>
+</li>
+</ul>
+</div></li>
+<li class="sidebar-dropdown item">
+<a href='https://www.clarin.com/cultura/' target="_self" class="">Cultura </a><i class="fa fa-chevron-down open-sub"></i>
+<div class="sidebar-submenu" style="display: none">
+<ul class="side">
+<li class="item-child" data-name="revistaN">
+<a target="_self" href="https://www.clarin.com/revista-enie/" onclick="metricsView('MENU_desplegable','seccion-Revista Ñ');">Revista Ñ</a>
+</li>
+</ul>
+</div></li>
+<li><a target="_self" onclick="metricsView('MENU_desplegable','seccion-Clima');" class="item" href='https://www.clarin.com/clima/'>Clima</a></li>
+
+<li><a target="_self" onclick="metricsView('MENU_desplegable','seccion-Horóscopo');" class="item" href='https://www.clarin.com/horoscopo.html'>Horóscopo</a></li>
+<li><a target="_self" onclick="metricsView('MENU_desplegable','seccion-Loterías y Quinielas');" class="item" href='https://www.clarin.com/loterias-y-quinielas/'>Loterías y Quinielas</a></li>
+<li><a target="_self" onclick="metricsView('MENU_desplegable','seccion-Radio Mitre en Vivo');" class="item" href='https://www.clarin.com/radio-mitre-vivo/'>Radio Mitre en Vivo</a></li>
+<li class="sidebar-dropdown item">
+<a target="_self" class="open-sub">Otros Servicios </a><i class="fa fa-chevron-down open-sub"></i>
+<div class="sidebar-submenu" style="display: none">
+<ul class="side">
+<li class="item-child" data-name="clasificados">
+<a target="_self" href="https://clasificados.clarin.com/" onclick="metricsView('MENU_desplegable','seccion-Clasificados');">Clasificados</a>
+</li>
+</ul>
+<ul class="side">
+<li class="item-child" data-name="argenprop">
+<a target="_self" href="https://www.argenprop.com/" onclick="metricsView('MENU_desplegable','seccion-Argenprop');">Argenprop</a>
+</li>
+</ul>
+<ul class="side">
+<li class="item-child" data-name="empleos">
+<a target="_self" href="https://www.empleos.clarin.com/postulantes/" onclick="metricsView('MENU_desplegable','seccion-Empleos');">Empleos</a>
+</li>
+</ul>
+<ul class="side">
+<li class="item-child" data-name="humoreilustraciones">
+<a target="_self" href="https://www.clarin.com/humor/" onclick="metricsView('MENU_desplegable','seccion-Humor e Ilustraciones');">Humor e Ilustraciones</a>
+</li>
+</ul>
+<ul class="side">
+<li class="item-child" data-name="feriados2020">
+<a target="_self" href="https://www.clarin.com/feriados/" onclick="metricsView('MENU_desplegable','seccion-Feriados 2020');">Feriados 2020</a>
+</li>
+</ul>
+<ul class="side">
+<li class="item-child" data-name="programaciondetvargentina">
+<a target="_self" href="https://www.clarin.com/television-argentina/" onclick="metricsView('MENU_desplegable','seccion-Programación de TV Argentina');">Programación de TV Argentina</a>
+</li>
+</ul>
+<ul class="side">
+<li class="item-child" data-name="tapasdeclarin">
+<a target="_self" href="https://tapas.clarin.com/" onclick="metricsView('MENU_desplegable','seccion-Tapas de Clarín');">Tapas de Clarín</a>
+</li>
+</ul>
+<ul class="side">
+<li class="item-child" data-name="edicionesanteriores">
+<a target="_self" href="https://www.clarin.com/ediciones-anteriores/" onclick="metricsView('MENU_desplegable','seccion-Ediciones anteriores');">Ediciones anteriores</a>
+</li>
+ </ul>
+<ul class="side">
+<li class="item-child" data-name="grandt">
+<a target="_self" href="https://www.grandt.clarin.com/" onclick="metricsView('MENU_desplegable','seccion-Gran DT');">Gran DT</a>
+</li>
+</ul>
+<ul class="side">
+<li class="item-child" data-name="horoscopochino">
+<a target="_self" href="https://www.clarin.com/horoscopo-chino" onclick="metricsView('MENU_desplegable','seccion-Horóscopo chino');">Horóscopo chino</a>
+</li>
+</ul>
+<ul class="side">
+<li class="item-child" data-name="agencias">
+<a target="_self" href="https://www.clarin.com/agencias/" onclick="metricsView('MENU_desplegable','seccion-Agencias');">Agencias</a>
+</li>
+</ul>
+</div></li>
+<li><a target="_self" onclick="metricsView('MENU_desplegable','seccion-Edición impresa');" class="item" href='https://kiosco.clarin.com/'>Edición impresa</a></li>
+<li><a target="_self" onclick="metricsView('MENU_desplegable','seccion-Claringrilla');" class="item" href='https://www.clarin.com/claringrilla'>Claringrilla</a></li>
+<li><a target="_self" onclick="metricsView('MENU_desplegable','seccion-Sudoku');" class="item" href='https://www.clarin.com/sudoku'>Sudoku</a></li>
+ <li><a target="_self" onclick="metricsView('MENU_desplegable','seccion-Videos');" class="item" href='https://www.clarin.com/videos/'>Videos</a></li>
+<li><a target="_self" onclick="metricsView('MENU_desplegable','seccion-Fotogalerías');" class="item" href='https://www.clarin.com/fotogalerias/'>Fotogalerías</a></li>
+<li><a target="_self" onclick="metricsView('MENU_desplegable','seccion-Fama');" class="item" href='https://www.clarin.com/fama/'>Fama</a></li>
+<li><a target="_self" onclick="metricsView('MENU_desplegable','seccion-Internacional');" class="item" href='https://www.clarin.com/internacional/'>Internacional</a></li>
+<li class="sidebar-dropdown item">
+<a target="_self" class="open-sub">Estilo </a><i class="fa fa-chevron-down open-sub"></i>
+<div class="sidebar-submenu" style="display: none">
+<ul class="side">
+<li class="item-child" data-name="autos">
+<a target="_self" href="https://www.clarin.com/autos/" onclick="metricsView('MENU_desplegable','seccion-Autos');">Autos</a>
+</li>
+</ul>
+<ul class="side">
+<li class="item-child" data-name="tecnologia">
+<a target="_self" href="https://www.clarin.com/tecnologia/" onclick="metricsView('MENU_desplegable','seccion-Tecnología');">Tecnología</a>
+</li>
+</ul>
+<ul class="side">
+<li class="item-child" data-name="viajes">
+<a target="_self" href="https://www.clarin.com/viajes/" onclick="metricsView('MENU_desplegable','seccion-Viajes');">Viajes</a>
+</li>
+</ul>
+
+<ul class="side">
+<li class="item-child" data-name="arq">
+<a target="_self" href="https://www.clarin.com/arq/" onclick="metricsView('MENU_desplegable','seccion-Arq');">Arq</a>
+</li>
+</ul>
+<ul class="side">
+<li class="item-child" data-name="recetas">
+<a target="_self" href="https://recetas.clarin.com/" onclick="metricsView('MENU_desplegable','seccion-Recetas');">Recetas</a>
+</li>
+</ul>
+<ul class="side">
+<li class="item-child" data-name="gourmet">
+<a target="_self" href="https://www.clarin.com/gourmet/" onclick="metricsView('MENU_desplegable','seccion-Gourmet');">Gourmet</a>
+</li>
+</ul>
+<ul class="side">
+<li class="item-child" data-name="buenavida">
+<a target="_self" href="https://www.clarin.com/buena-vida/" onclick="metricsView('MENU_desplegable','seccion-Buena Vida');">Buena Vida</a>
+</li>
+</ul>
+<ul class="side">
+<li class="item-child" data-name="familias">
+<a target="_self" href="https://www.clarin.com/familias" onclick="metricsView('MENU_desplegable','seccion-Familias');">Familias</a>
+</li>
+</ul>
+<ul class="side">
+<li class="item-child" data-name="relaciones">
+<a target="_self" href="https://www.clarin.com/relaciones" onclick="metricsView('MENU_desplegable','seccion-Relaciones');">Relaciones</a>
+</li>
+</ul>
+<ul class="side">
+<li class="item-child" data-name="genero">
+<a target="_self" href="https://www.clarin.com/genero" onclick="metricsView('MENU_desplegable','seccion-Género');">Género</a>
+</li>
+ </ul>
+<ul class="side">
+<li class="item-child" data-name="astrologia">
+<a target="_self" href="https://www.clarin.com/astrologia" onclick="metricsView('MENU_desplegable','seccion-Astrología');">Astrología</a>
+</li>
+</ul>
+</div></li>
+<li class="sidebar-dropdown item">
+<a target="_self" class="open-sub">Suplementos </a><i class="fa fa-chevron-down open-sub"></i>
+<div class="sidebar-submenu" style="display: none">
+<ul class="side">
+<li class="item-child" data-name="revistaviva">
+<a target="_self" href="https://www.clarin.com/viva/" onclick="metricsView('MENU_desplegable','seccion-Revista Viva');">Revista Viva</a>
+</li>
+</ul>
+<ul class="side">
+<li class="item-child" data-name="nytinternationalweekly">
+<a target="_self" href="https://www.clarin.com/new-york-times-international-weekly" onclick="metricsView('MENU_desplegable','seccion-NYT International Weekly');">NYT International Weekly</a>
+</li>
+</ul>
+<ul class="side">
+<li class="item-child" data-name="clarinemportugues">
+<a target="_self" href="https://www.clarin.com/br/" onclick="metricsView('MENU_desplegable','seccion-Clarín em portugués');">Clarín em portugués</a>
+</li>
+</ul>
+<ul class="side">
+<li class="item-child" data-name="especiales">
+<a target="_self" href="https://www.clarin.com/tema/especial-clarin.html" onclick="metricsView('MENU_desplegable','seccion-Especiales');">Especiales</a>
+</li>
+</ul>
+ <ul class="side">
+<li class="item-child" data-name="clarindocs">
+<a target="_self" href="https://www.clarin.com/videos-documentales-clarin" onclick="metricsView('MENU_desplegable','seccion-Clarín Docs');">Clarín Docs</a>
+</li>
+</ul>
+</div></li>
+<li><a target="_self" onclick="metricsView('MENU_desplegable','seccion-Newsletters');" class="item" href='https://www.clarin.com/newsletters/'>Newsletters</a></li>
+<li class="sidebar-dropdown item">
+<a href='https://www.clarin.com/contactenos.html' target="_self" class="">Contactanos </a><i class="fa fa-chevron-down open-sub"></i>
+<div class="sidebar-submenu" style="display: none">
+<ul class="side">
+<li class="item-child" data-name="ayuda">
+<a target="_self" href="https://www.clarin.com/preguntas-frecuentes" onclick="metricsView('MENU_desplegable','seccion-Ayuda');">Ayuda</a>
+</li>
+</ul>
+</div></li>
+<li class="sidebar-dropdown item">
+<a href='https://www.clarin.com/suscripciones/landing.html' target="_self" class="">Suscribite </a><i class="fa fa-chevron-down open-sub"></i>
+<div class="sidebar-submenu" style="display: none">
+<ul class="side">
+<li class="item-child" data-name="dialogosparasuscriptores">
+<a target="_self" href="https://www.clarin.com/dialogos/" onclick="metricsView('MENU_desplegable','seccion-Diálogos para suscriptores');">Diálogos para suscriptores</a>
+</li>
+</ul>
+</div></li>
+
+<li><a target="_self" onclick="metricsView('MENU_desplegable','seccion-Temas');" class="item" href='https://www.clarin.com/temas/'>Temas</a></li>
+</ul>
+</div>
+</div>
+</li>
+<li class="search-menu ">
+<input name="INICIO" placeholder="Buscar en el sitio" class="input-search-close js-search" type="text">
+<a id="open-search"><i class="fa fa-search fa-2" aria-hidden="true"></i></a>
+</li>
+<li class="logo-clarin">
+<a href="https://www.clarin.com/" title="Últimas Noticias de Argentina y el Mundo - Clarín" class="img-logo l_white"></a>
+</li>
+</ul>
+</li>
+
+<li class="nav__two">
+<div class="header-services">
+<div class="container">
+<div class="box-slider">
+<div class="swiper-container" id="header-services-slider">
+<div class="swiper-wrapper">
+<div class="swiper-slide">
+<div class=""><a target="_self" onclick="metricsView('HEADER_main','seccion-Último Momento');" href="https://www.clarin.com/ultimas-noticias/">Último Momento</a></div>
+</div>
+<div class="swiper-slide">
+<div class=""><a target="_self" onclick="metricsView('HEADER_main','seccion-Política');" href="https://www.clarin.com/politica/">Política</a></div>
+</div>
+<div class="swiper-slide">
+<div class=""><a target="_self" onclick="metricsView('HEADER_main','seccion-Economía');" href="https://www.clarin.com/economia/">Economía</a></div>
+</div>
+<div class="swiper-slide">
+<div class=""><a target="_self" onclick="metricsView('HEADER_main','seccion-Sociedad');" href="https://www.clarin.com/sociedad/">Sociedad</a></div>
+</div>
+<div class="swiper-slide">
+<div class=""><a target="_self" onclick="metricsView('HEADER_main','seccion-Mundo');" href="https://www.clarin.com/mundo/">Mundo</a></div>
+</div>
+<div class="swiper-slide">
+<div class=""><a target="_self" onclick="metricsView('HEADER_main','seccion-Deportes');" href="https://www.clarin.com/deportes/">Deportes</a></div>
+</div>
+<div class="swiper-slide">
+<div class=""><a target="_self" onclick="metricsView('HEADER_main','seccion-Espectáculos');" href="https://www.clarin.com/espectaculos/">Espectáculos</a></div>
+</div>
+<div class="swiper-slide">
+<div class=""><a target="_self" onclick="metricsView('HEADER_main','seccion-Rural');" href="https://www.clarin.com/rural/">Rural</a></div>
+</div>
+<div class="swiper-slide">
+<div class=""><a target="_self" onclick="metricsView('HEADER_main','seccion-Clasificados');" href="https://clasificados.clarin.com/inicio/index#!/">Clasificados</a></div>
+</div>
+<div class="swiper-slide">
+<div class=""><a target="_self" onclick="metricsView('HEADER_main','seccion-Claringrilla');" href="https://www.clarin.com/claringrilla">Claringrilla</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+
+</ul>
+
+<div id="header-weisen" class="widget">
+<div id="getGigyaSectionId" style="display: none;">1</div>
+<div class=" nav__three widget-bottom">
+<div class="shadow-left"></div>
+<a class="suscripcion365 sticky" href="https://365.clarin.com" onclick="metricsView('BTN_365clarin','boton-ir-365');" target="_blank"></a>
+<div class="paseLog  pase_notLoggedIn" style="display: none;">
+<div class="widget-txt widget-ingreso toggle">
+<a rel="nofollow" id="pase-panel-login" class="bt_ingresar" onclick="metricsView('BTN_ingresar','boton-ingresar-header');" style="display:block; overflow: hidden"><p id="loginLogout" class="login_pase"></p><span class="ic-user"></span></a>
+</div>
+</div>
+<div class="pase-module">
+<div class="paseLog  pase_LoggedIn" style="display: none;">
+<div class="widget-txt widget-ingreso flecha">
+<span class="icon-ingreso"></span>
+<div class="hola">
+<p id="userFirstName" class="nombre login_pase"></p>
+</div>
+</div>
+<div style="display: none;" class="opciones subnav">
+<span class="pic"></span>
+<ul>
+<li><span class="email-usuario"></span></li>
+<li><a id="cuenta-usuario" class="cuenta-usuario">MI CUENTA</a></li>
+<li id="misuscripcion" style="display: none; padding-bottom: 3px;"><a id="mi_suscripcion" href="http://autogestion.365.com.ar">MI SUSCRIPCION</a></li>
+<li class="toggle"><a class="logoff pase_logoff">CERRAR SESIÓN</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="subscribe" style="display: none;">
+<a class="btn-e-red-head " onclick="metricsView('BTN_suscribite','boton-suscribite-header-main');" href="https://www.clarin.com/suscripciones/landing.html?ob=1" data-xalok="1"><p>Suscribite<span> por $10</span></p></a>
+</div>
+</div>
+<script>
+
+    function metricsView(category, label){
+        console.log("metrics:"+category+" "+label)
+        var extraParams = {
+            'event': 'trackEvent',
+            'eventCategory': category,
+            'eventAction': 'click',
+            'eventLabel': label,
+            'eventValue': undefined,
+            'nonInteraction': false 
+        }
+        sendGAPageview(extraParams);
+       
+    }
+
+    var status = sasClarinHelper.getKwPw();
+    if (status !=2 ) {
+        $(".subscribe").show();
+        $(document).ready(function() {
+            $(".footer_suscribe").css("display","block");
+        });
+
+    } else if (status == 2) {
+        $(document).ready(function() {
+            $("li#misuscripcion").show();
+        });
+
+    }
+</script>
+</div>
+
+</nav>
+<div class="header-bottom subheader-new container">
+<div class="content">
+<a class="img-logo l_submenu" href="https://www.clarin.com/">
+
+<img src="https://www.clarin.com/commons/bundles/clarinsite/images/header/logo-75-desktop.svg" alt="Últimas Noticias de Argentina y el Mundo - Clarín" title="Últimas Noticias de Argentina y el Mundo - Clarín" />
+</a>
+<div class="content__right">
+
+<input type="hidden" id="imageHeaderLogoShow" value="" />
+
+<div class="widget-clima l">
+<a href="https://www.clarin.com/clima" onclick="metricsView('WIDGET','widget-clima-home');">
+<figure class="widget-img l dsds">
+<img src="/static/DESClima/images/v3/chicas/1.png" alt="Clima">
+</figure>
+<div class="widget-txt l">
+<span class="city">Ciudad de Buenos Aires</span>
+<span data-temperatura="17" class="temperatura">17.2&deg;</span>
+<span class="termica"> ST 17.5&deg;</span>
+</div>
+</a>
+
+</div>
+<a class="suscripcion365" href="https://365.clarin.com" onclick="metricsView('BTN_365clarin','boton-ir-365');" target="_blank"></a>
+</div>
+</div>
+</div>
+
+<div class="header-services head-latests">
+<div class="container content-latest">
+<div class="box-slider">
+<div class="swiper-container sub-swiper" id="header-services-slider">
+<ul class="swiper-wrapper">
+<li class="swiper-slide"><span class="first-item ">Noticias de hoy</span></li>
+<li class="swiper-slide">
+<h2><a target="_self" href="https://www.clarin.com/deportes/roland-garros-2020-diego-schwartzman-garantizo-llegar-top-ten-puede-subir_0_6BeVaGYF4.html" target="_blank">Roland Garros 2020</a></h2>
+</li>
+<li class="swiper-slide">
+<h2><a target="_self" href="https://www.clarin.com/deportes/roland-garros-2020-nadia-podoroska-vs-elena-svitolina-cuartos-final-minuto-minuto_0__khBoGnAH.html" target="_blank">Diego Schwartzman</a></h2>
+</li>
+<li class="swiper-slide">
+<h2><a target="_self" href="https://www.clarin.com/deportes/roland-garros-2020-nadia-podoroska-vs-elena-svitolina-cuartos-final-minuto-minuto_0__khBoGnAH.html" target="_blank">Nadia Podoroska</a></h2>
+</li>
+<li class="swiper-slide">
+<h2><a target="_self" href="https://www.clarin.com/economia/dolar-blue-hoy-cotiza-martes-06-octubre_0_sN9VvIGq6.html" target="_blank">Dólar Blue Hoy</a></h2>
+</li>
+<li class="swiper-slide">
+<h2><a target="_self" href="https://www.clarin.com/sociedad/coronavirus-matematica-confirma-provincia-buenos-aires-supero-pico-casos_0_kJi8PNw7K.html" target="_blank">Coronavirus en Argentina</a></h2>
+</li>
+<li class="swiper-slide">
+<h2><a target="_self" href="https://www.clarin.com/mundo/donald-trump-salio-hospital-rumbo-casa-blanca_0_bqmOOwnaM.html" target="_blank">Donald Trump</a></h2>
+</li>
+<li class="swiper-slide">
+<h2><a target="_self" href="https://www.clarin.com/sociedad/premio-nobel-fisica-2020-investigadores-agujeros-negros-espacio_0_ZVehjR7Av.html" target="_blank">Premio Nobel de Física</a></h2>
+</li>
+<li class="swiper-slide">
+<h2><a target="_self" href="https://www.clarin.com/sociedad/anunciaran-actividades-escolares-alumnos-terminando-primaria-secundaria_0_1o02Ny4Jn.html" target="_self">Clases presenciales</a></h2>
+</li>
+ </ul>
+</div>
+</div>
+<div class="dateTime pull-right"><p>Martes, 06 de Octubre de 2020</p></div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+    logoClick = function(e){
+        if(""!=""){
+         var pass_data= {hitType: "event",action: ""};
+         sendGAPageview(pass_data);
+        }
+     };
+
+
+    $(document).ready(function(e) {
+            new Swiper(".swiper-container",{
+            slidesPerView:"auto",
+            pagination:".swiper-pagination",
+            paginationClickable:!0,
+            spaceBetween:3,
+            nextButton:".swiper-button-next",
+            prevButton:".swiper-button-prev",
+            breakpoints:{
+                1254:{},
+                1024:{},
+                768:{}
+            }
+        })
+        
+        $("#logoImageHeaderLink").bind('click',function(e){
+             e.stopPropagation();
+             e.preventDefault();
+             logoClick();
+             setTimeout(function(){
+                if("_blank" == "_self"){
+                   window.location = "https://www.clarin.com/suscripciones/landing.html?utm_source=ageamkt_autopromo&utm_medium=banner_header_hot_sale&utm_campaign=paywall_hot_sale_combo_1";
+                }else{
+                    window.open("https://www.clarin.com/suscripciones/landing.html?utm_source=ageamkt_autopromo&utm_medium=banner_header_hot_sale&utm_campaign=paywall_hot_sale_combo_1","_blank");
+                }
+             }, 200);
+         });
+
+
+
+        $('.dropdown-menu .close').dropdown('toggle');
+
+        $('.navbar-nav li.dropdown').on('shown.bs.dropdown', function(){
+            $('header .menu-overlay').show();
+            $('.navbar-nav .nav-item').hide();
+            $('.nav-right .search').hide();
+            $('.nav-right .pase-sticky').hide();
+            $('.navbar-nav .isologo').hide();
+        });
+
+        $('.navbar-nav li.dropdown').on('hidden.bs.dropdown', function(){
+            $('header .menu-overlay').hide();
+            $('.navbar-nav .nav-item').css({'display':'block'});
+            $('.nav-right .search').css({'display':'block'});
+            if($('.header-content').find('nav.nav-st').length > 0){
+                if($('.pase-sticky').length > 0)
+                    $('.pase-sticky').css({'display':'block'});
+                if($('ul.navbar-nav li.isologo').length > 0)
+                    $('ul.navbar-nav li.isologo').css({'display':'block'});
+            }
+        });
+
+
+        //Desplegable Pase
+        var toggle = false;
+        $(".pase-module .pase_LoggedIn").click(function(){
+            if(!toggle) {
+                $(".pase-module .opciones.subnav").slideDown(300);
+                toggle = true;
+            } else {
+                $(".pase-module .opciones.subnav").slideUp(300);
+                toggle = false;
+            }
+        });
+        //Fin deplegable Pase
+
+        //Menú Desplegable
+        $('.toggle-icon').on('click', function(e){
+            e.stopImmediatePropagation();
+            var thisElm = this;
+            var elmsDesplegados = $('.subsections-col:visible');
+
+            if($(thisElm).hasClass('open')){
+                $(thisElm).removeClass('open');
+                $(thisElm).closest('li').find('ul').slideUp(300);
+                return false;
+            }
+
+            if(elmsDesplegados.length > 0) {
+                $('.toggle-icon').removeClass('open');
+                elmsDesplegados.slideUp(200, function(){
+                    desplegarMenu(thisElm);
+                });
+            } else {
+                desplegarMenu(thisElm);
+            }
+        });
+
+        function desplegarMenu(elm){
+            var classSection = $(elm).attr('class').split(" ")[1];
+            $(".subsections-col."+classSection).slideDown(300);
+            $(elm).addClass('open');
+        }
+        //Fin desplegable
+
+        var hasNotUlChild= $('.dropdown-menu .columna .section-name').not(':has("ul")');
+        hasNotUlChild.find('.toggle-icon').hide();
+
+        $('.dropdown-menu .columna').last().addClass('last');
+
+    });
+
+    $("#open-search, .js-search").click(function(e) {
+        if($(".js-search").hasClass("input-search-close")){
+            $(".search-menu").addClass("valid-menu");
+        $(".fa-times-circle").show()
+        $("nav").addClass("valid")
+        $(".js-search").removeClass("input-search-close").addClass("input-search")
+        }else{
+            var val = $(".js-search").val();
+            if (val != "") {
+                window.location.assign("/buscador/?q=" + encodeURIComponent(val));
+            }
+        }
+    });
+
+    $("#close-search").click(function(){
+        $(".search-menu").removeClass("valid-menu");
+        $(".fa-times-circle").hide()
+        $("nav").removeClass("valid")
+        $(".js-search").addClass("input-search-close").removeClass("input-search");
+        $(".js-search").val("")
+    });
+
+    
+
+</script>
+</header>
+<div class="banner-border">
+<div class="adv megaexpandible">
+<div id="epl_expandable_div"></div>
+<div>
+<div id="horizontal1" class="ad-slot" data-adtype="horizontal1"></div>
+</div>
+</div>
+</div>
+
+<script type="text/javascript">
+	// Refresco de página - home
+        refresh_on = true;
+
+        function refresh_Play(){
+            metricsRefresh(5);
+        }
+
+        refresh_Play();
+</script>
+<div class="content home">
+<div class="container father" data-classes="container" data-type="container_father" data-name="container_father">
+<div data-name="contA" class="container contA   " data-classes="container  " data-type="container">
+<div class="top-head">
+<div class="row bb-container bb-moduleId_v3_row_mod_202032689554073" data-count="12">
+<div class="border box col-lg-6 col-md-8 col-sm-12 col-xs-12 no-p list-format" data-size-w="2" data-size-h="1" data-classes="border box col-lg-6 col-md-8 col-sm-12 col-xs-12 no-p list-format" data-name="content">
+<article class="content-nota list-format twoxone_foto_small">
+<a href="/deportes/diego-schwartzman-vs-dominic-thiem-cuartos-final-roland-garros-2020-minuto-minuto_0_vy-plPIDi.html" target="_self">
+<div class="mt">
+<p class="volanta ">Será top ten desde el lunes</p>
+<h1>Schwartzman le gan&oacute; una batalla &eacute;pica a Thiem tras 5 horas y est&aacute; en semifinales de Roland Garros</h1>
+</div>
+<div class="mg">
+<div class="pull-left txt">
+<p class="summary">El Peque se impuso al número 3 del mundo para meterse entre los cuatro mejores del Grand Slam francés. Su próximo rival saldrá entre Nadal y Sinner.</p>
+</div>
+<div class="wrap-figure">
+<figure id="imgmod_202092176108566">
+<img class="img-responsive intelResolution lazyload" alt="Schwartzman le ganó una batalla épica a Thiem tras 5 horas y está en semifinales de Roland Garros" data-small="https://images.clarin.com/2020/10/04/l5MDmZ9G0_290x140__1.jpg" data-big="https://images.clarin.com/2020/10/04/l5MDmZ9G0_600x290__2.jpg#1601833838199" src="https://images.clarin.com/collections/static/lazy_square.svg">
+</figure>
+</div>
+</div>
+<div class="data-txt">
+<a href="/deportes/" target="_self"><p class="section">Deportes</p></a>
+</div>
+</a>
+</article>
+</div>
+<div class="border box col-lg-3 col-md-4 col-sm-6 col-xs-12 no-p list-format" data-size-w="1" data-size-h="1" data-classes="border box col-lg-3 col-md-4 col-sm-6 col-xs-12 no-p list-format" data-name="content">
+<article class="content-nota onexone_foto    list-format">
+<a href="/deportes/roland-garros-2020-diego-schwartzman-garantizo-llegar-top-ten-puede-subir_0_6BeVaGYF4.html" target="_self">
+<div class="wrap-figure">
+<figure id="imgmod_202092686241396">
+<img class="img-responsive intelResolution lazyload" alt="El &quot;Peque&quot; se garantizó llegar al top ten y puede subir todavía más" data-small="https://images.clarin.com/2020/10/06/CmB8cn1un_290x140__1.jpg" data-big="https://images.clarin.com/2020/10/06/CmB8cn1un_600x290__1.jpg" src="https://images.clarin.com/collections/static/lazy_square.svg">
+</figure>
+</div>
+<div class="mt ">
+<a href="/deportes/roland-garros-2020-diego-schwartzman-garantizo-llegar-top-ten-puede-subir_0_6BeVaGYF4.html" target="_self"><p class="volanta ">Una garra enorme</p></a>
+<a href="/deportes/roland-garros-2020-diego-schwartzman-garantizo-llegar-top-ten-puede-subir_0_6BeVaGYF4.html" target="_self"><h3>El &ldquo;Peque&rdquo; se garantiz&oacute; llegar al top ten y puede subir todav&iacute;a m&aacute;s</h3></a>
+</div>
+<div class="data-txt">
+<a href="/deportes/" target="_self"><p class="section">Deportes</p></a>
+</div>
+</a>
+</article>
+</div>
+<div class="border box col-lg-3 col-md-4 col-sm-6 col-xs-12 no-p bb-container bb-moduleId_v3_multiple_mod_202092947585853 special" data-size-w="1" data-size-h="1" data-classes="border box col-lg-3 col-md-4 col-sm-6 col-xs-12 special" data-name="containerMultiple">
+<div class="half col-lg-12 no-p" data-classes="half col-lg-12 no-p" data-name="content">
+<div class="ico-tx-news xs">
+<a class="content-ico" href="/deportes/roland-garros-2020-nadia-podoroska-vs-elena-svitolina-cuartos-final-minuto-minuto_0__khBoGnAH.html" target="_self">
+<div class="ico">
+<div class="mdia media-pgl"></div>
+</div>
+</a>
+</div>
+<article class="content-nota list-format onexone_doble">
+<div class="wrap-figure s">
+<a href="/deportes/roland-garros-2020-nadia-podoroska-vs-elena-svitolina-cuartos-final-minuto-minuto_0__khBoGnAH.html" target="_self">
+<figure id="imgmod_202092521153959">
+<img class="img-responsive intelResolution lazyload" alt="Podoroska barrió a Svitolina y es semifinalista en Roland Garros" data-small="https://images.clarin.com/2020/10/06/_WVkhZ-CL_110x110__1.jpg" data-middle="https://images.clarin.com/2020/10/06/_WVkhZ-CL_290x140__1.jpg" data-big="https://images.clarin.com/2020/10/06/_WVkhZ-CL_290x140__2.jpg#1601989459703" src="https://images.clarin.com/collections/static/lazy_square.svg">
+</figure>
+</a>
+</div>
+<div class="mt">
+<a href="/deportes/roland-garros-2020-nadia-podoroska-vs-elena-svitolina-cuartos-final-minuto-minuto_0__khBoGnAH.html" target="_self">
+<p class="volanta ">Hace historia en París</p>
+<h2>Podoroska barri&oacute; a Svitolina y es semifinalista en Roland Garros</h2>
+</a>
+</div>
+<div class="data-txt">
+<a href="/deportes/" target="_self"><p class="section">Deportes</p></a>
+</div>
+</article>
+</div>
+<div class="half col-lg-12 no-p" data-classes="half col-lg-12 no-p" data-name="content">
+<article class="content-nota list-format onexone_doble">
+<div class="wrap-figure s">
+<a href="/deportes/nadie-podoroska-redes-rendidos-twitter_0_0hEee2Srg.html" target="_self">
+<figure id="imgmod_202092228305257">
+<img class="img-responsive intelResolution lazyload" alt="Sabatini" data-small="https://images.clarin.com/2020/10/06/ju3LUsAhx_110x110__1.jpg" data-middle="https://images.clarin.com/2020/10/06/ju3LUsAhx_290x140__1.jpg" data-big="https://images.clarin.com/2020/10/06/ju3LUsAhx_290x290__1.jpg" src="https://images.clarin.com/collections/static/lazy_square.svg">
+</figure>
+</a>
+</div>
+<div class="mt">
+<a href="/deportes/nadie-podoroska-redes-rendidos-twitter_0_0hEee2Srg.html" target="_self">
+<p class="volanta ">Los más grandes</p>
+<h2>Sabatini, Gin&oacute;bili y Lucha Aymar, rendidos ante la &ldquo;Princesa Podoroska&rdquo;</h2>
+</a>
+</div>
+<div class="data-txt">
+<a href="/deportes/" target="_self"><p class="section">Deportes</p></a>
+</div>
+</article>
+</div>
+</div>
+<div class="border box col-lg-3 col-md-4 col-sm-6 col-xs-12 no-p htmlfreeLabel" data-size-w="1" data-size-h="1" data-classes="border box col-lg-3 col-md-4 col-sm-6 col-xs-12 no-p htmlfreeLabel" data-name="htmlfree">
+
+<div class="frana frana--1x1">
+<a href="https://www.clarin.com/deportes/roland-garros-campeona-sabado-gran-ganadora-paris-nadia-podoroska_0_au67e2O9U.html" target="_self" class="frana__link"></a>
+<div class="frana__text">
+<div class="frana__title"><span>Histórico</span> Podoroska ya es la gran ganadora en París
+</div>
+<div class="frana__section">Deportes</div>
+</div>
+<video autoplay muted loop playsinline id="" src="https://vod.vodgc.net/gid2/vod/AGEA/Clarin/82/3-245-F9N6UsP31-Wt5ETY1601587459596_480P.mp4" type="video/mp4">
+</video>
+</div>
+<link rel="stylesheet" href="https://clarin.com/redaccionfiler/clarin/desarrollo/2020/deportes/frana/home/frana.css">
+</div>
+<div class="border box col-lg-3 col-md-4 col-sm-6 col-xs-12 no-p small-ic list-format" data-size-w="1" data-size-h="1" data-classes="border box col-lg-3 col-md-4 col-sm-6 col-xs-12 no-p" data-name="content">
+<article class="content-nota list-format onexone_foto_small">
+<a href="/economia/argentina-insolita-pagan-ganancias-salarios-apenas-encima-canasta-pobreza_0_LE8o0Iboy.html" target="_self">
+<div class="mt">
+<p class="volanta ">Afecta a la clase media</p>
+<h3>Pagan Ganancias salarios que est&aacute;n apenas por encima de la canasta de pobreza</h3>
+</div>
+<div class="mg">
+<div class="pull-left txt">
+<p class="summary">La canasta básica para una familia tipo es de $ 45,477. Y una persona casada con dos hijos empieza a pagar el impuesto a partir de ingresos por $ 73.102.&nbsp;</p>
+</div>
+<div class="wrap-figure">
+<figure id="imgmod_202092252382311">
+<img class="img-responsive intelResolution lazyload" alt="Pagan Ganancias salarios que están apenas por encima de la canasta de pobreza" data-small="/static/CLAClarin/images/isologo_clarin_gris.svg" data-middle="https://images.clarin.com/2020/01/08/SD5OmbfY_290x140__1.jpg" data-big="https://images.clarin.com/2020/01/08/SD5OmbfY_110x110__1.jpg" src="https://images.clarin.com/collections/static/lazy_square.svg">
+</figure>
+</div>
+</div>
+<div class="data-txt">
+<a href="/economia/" target="_self"><p class="section">Economía</p></a>
+<p class="author" onClick="window.open('/autor/ismael-bermudez.html','_blank');" style="cursor: pointer;">Ismael Bermúdez</p>
+</div>
+</a>
+</article>
+</div>
+
+<div XX class="border box col-lg-6 col-md-8 col-sm-12 col-xs-12 no-p geo txt-bottom" data-size-w="2" data-size-h="1" data-classes="border box col-lg-6 col-md-8 col-sm-12 col-xs-12 no-p txt-bottom" data-name="content">
+<article class="visual content-nota twoxone_visual   txt-bottom list-format">
+<figure id="imgmod_202092258022855">
+<a href="/autos/auto-artesanal-argentino-paso-paso-sueno-construir-vehiculo-propio_0_6-ZIH3xGl.html" target="_self">
+<div class="wrap-img">
+<img class="img-responsive intelResolution lazyload" alt="Auto artesanal argentino: paso a paso" data-small="https://images.clarin.com/2020/10/05/zSc--h019_340x340__1.jpg" data-big="https://images.clarin.com/2020/10/05/zSc--h019_600x290__1.jpg" src="https://images.clarin.com/collections/static/lazy_square.svg">
+<div class="img-responsive video-onexone-small">
+<video preload="none" muted playsinline class="video_preview stopped" id="video-newsmod_202092258022855">
+<source src="https://thumbs.vodgc.net/3-245-quBAGnzr6-VwioaF1601935575298_720P.mp4" type="video/mp4">
+</video>
+</div>
+</div>
+</a>
+<div class="mt ">
+<div class="destacado">Especial Clarín</div>
+<div class="max-h">
+<a href="/autos/auto-artesanal-argentino-paso-paso-sueno-construir-vehiculo-propio_0_6-ZIH3xGl.html" target="_self">
+<h2>Auto artesanal argentino: paso a paso, c&oacute;mo armar un coche propio</h2>
+</a>
+</div>
+<div class="data-txt">
+<a href="/autos/" target="_self"><p class="section">Autos</p></a>
+<a href="/autor/gabriel-silveira.html" target="_self"><p class="author">Gabriel Silveira</p></a>
+</div>
+</div>
+</figure>
+</article>
+</div>
+<script type="text/javascript">
+//logica de preview, actualmente solo en twoxone visual. Logica de llamado, logica de reproduccion contenida en scripts.js(Front ) y bbt.board.ediotr.js(Admin)
+$(document).ready(function(){
+    
+    if($("#video-newsmod_202092258022855").isInViewport()){
+        if(typeof hoverPreview != "undefined" && hoverPreview.isMobile){
+            hoverPreview.videoPreview = "#video-newsmod_202092258022855";
+            hoverPreview.mobileIn();
+        }else{
+            hoverPreview.videoPreview = "#video-newsmod_202092258022855";
+            hoverPreview.counter = "#countermod_202092258022855";
+            hoverPreview.moduleId = "mod_202092258022855";
+            hoverPreview.url = "/autos/auto-artesanal-argentino-paso-paso-sueno-construir-vehiculo-propio_0_6-ZIH3xGl.html";
+            hoverPreview.in();
+        }
+            
+    }
+    document.addEventListener('scroll', event => {
+        if($("#video-newsmod_202092258022855").isInViewport()){
+            if(typeof hoverPreview != "undefined" && hoverPreview.isMobile){
+                hoverPreview.videoPreview = "#video-newsmod_202092258022855";
+                hoverPreview.mobileIn();
+            }else{
+                hoverPreview.videoPreview = "#video-newsmod_202092258022855";
+                hoverPreview.counter = "#countermod_202092258022855";
+                hoverPreview.moduleId = "mod_202092258022855";
+                hoverPreview.url = "/autos/auto-artesanal-argentino-paso-paso-sueno-construir-vehiculo-propio_0_6-ZIH3xGl.html";
+                hoverPreview.in(); 
+            }
+        }
+        else {
+            if(typeof hoverPreview != "undefined" && hoverPreview.isMobile){
+                hoverPreview.videoPreview = "#video-newsmod_202092258022855";
+                hoverPreview.mobileOut();
+            }else{
+                hoverPreview.videoPreview = "#video-newsmod_202092258022855";
+                hoverPreview.out();
+            }
+        }
+    })
+});
+</script>
+<div class="border box col-lg-3 col-md-4 col-sm-6 col-xs-12 no-p small-ic list-format" data-size-w="1" data-size-h="1" data-classes="border box col-lg-3 col-md-4 col-sm-6 col-xs-12 no-p" data-name="content">
+<article class="content-nota list-format onexone_foto_small">
+<a href="/sociedad/anunciaran-actividades-escolares-alumnos-terminando-primaria-secundaria_0_1o02Ny4Jn.html" target="_self">
+<div class="mt">
+<p class="volanta ">Tiempo de definiciones</p>
+<h3>Habr&aacute; &ldquo;actividades no escolares&rdquo; para quienes est&aacute;n terminando primaria y secundaria</h3>
+</div>
+<div class="mg">
+<div class="pull-left txt">
+<p class="summary">También se aplicará un “semáforo epidemiológico” para volver a las clases presenciales.</p>
+</div>
+<div class="wrap-figure">
+<figure id="imgmod_202092338226249">
+<img class="img-responsive intelResolution lazyload" alt="Habrá &quot;actividades no escolares&quot; para quienes están terminando primaria y secundaria" data-small="/static/CLAClarin/images/isologo_clarin_gris.svg" data-middle="https://images.clarin.com/2020/10/06/6aXWJMjy0_290x140__1.jpg" data-big="https://images.clarin.com/2020/10/06/6aXWJMjy0_110x110__1.jpg" src="https://images.clarin.com/collections/static/lazy_square.svg">
+</figure>
+</div>
+</div>
+<div class="data-txt">
+<a href="/sociedad/" target="_self"><p class="section">Sociedad</p></a>
+<p class="author" onClick="window.open('/autor/ricardo-braginski.html','_blank');" style="cursor: pointer;">Ricardo Braginski</p>
+</div>
+</a>
+</article>
+</div>
+<div class="des-adv  border box col-lg-3 col-md-4 col-sm-6 col-xs-12 no-p" data-size-w="1" data-size-h="1" data-classes="border box col-lg-3 col-md-4 col-sm-6 col-xs-12 no-p" data-name="advert">
+<p class="pbl">PUBLICIDAD</p>
+<div id="caja1" class="banner_center ad-slot" data-adtype="caja"></div>
+
+</div>
+<div class="border box col-lg-3 col-md-4 col-sm-6 col-xs-12 no-p list-format" data-size-w="1" data-size-h="1" data-classes="border box col-lg-3 col-md-4 col-sm-6 col-xs-12 no-p list-format" data-name="content">
+<article class="content-nota onexone_foto    list-format">
+<a href="/politica/jueza-debe-decidir-patrimonio-cristina-kirchner-ahora-suma-maximo_0_916Yc7cXd.html" target="_self">
+<div class="wrap-figure">
+<figure id="imgmod_202092481915827">
+<img class="img-responsive intelResolution lazyload" alt="Quién es la jueza que debe decidir sobre la fortuna de Cristina y Máximo Kirchner" data-small="https://images.clarin.com/2019/04/16/QCEhk1gUo_290x140__1.jpg" data-big="https://images.clarin.com/2019/04/16/QCEhk1gUo_290x140__1.jpg" src="https://images.clarin.com/collections/static/lazy_square.svg">
+</figure>
+</div>
+<div class="mt ">
+<a href="/politica/jueza-debe-decidir-patrimonio-cristina-kirchner-ahora-suma-maximo_0_916Yc7cXd.html" target="_self"><p class="volanta ">Comodoro Py</p></a>
+<a href="/politica/jueza-debe-decidir-patrimonio-cristina-kirchner-ahora-suma-maximo_0_916Yc7cXd.html" target="_self"><h3>Qui&eacute;n es la jueza que debe decidir sobre la fortuna de Cristina y M&aacute;ximo Kirchner</h3></a>
+</div>
+<div class="data-txt">
+<a href="/politica/" target="_self"><p class="section">Política</p></a>
+<p class="author" onClick="window.open('/autor/lucia-salinas.html','_blank');" style="cursor: pointer;">Lucía Salinas</p>
+</div>
+</a>
+</article>
+</div>
+<div class="des-adv  border box col-lg-3 col-md-4 col-sm-6 col-xs-12 no-p" data-size-w="1" data-size-h="1" data-classes="border box col-lg-3 col-md-4 col-sm-6 col-xs-12 no-p" data-name="advert">
+<p class="pbl">PUBLICIDAD</p>
+<div id="caja6" class="banner_center ad-slot" data-adtype="caja"></div>
+
+</div>
+</div>
+</div>
+</div>
+<div class="border col-lg-12 no-p htmlfreeLabel full" data-size-w="0" data-size-h="0" data-classes="border col-lg-12 no-p htmlfreeLabel full" data-name="htmlfree">
+<link rel="stylesheet" href="https://clarin.com/redaccionfiler/clarin/desarrollo/2020/mundo/elecciones-eeuu-2020/banner/banner-eeuu-2020.css">
+<a href="https://www.clarin.com/tema/elecciones-en-estados-unidos.html" class="banner-eeuu__link">
+<div class="banner-eeuu">
+<div class="banner-eeuu__candidates">
+<img src="https://clarin.com/redaccionfiler/clarin/desarrollo/2020/mundo/elecciones-eeuu-2020/banner/images/eeuu-elecciones-2020.svg" alt="Elecciones 2020 EEUU" class="banner-eeuu__candidates_flag">
+<img src="https://clarin.com/redaccionfiler/clarin/desarrollo/2020/mundo/elecciones-eeuu-2020/banner/images/logo.svg" alt="" class="banner-eeuu__candidates_clarin">
+</div>
+<div class="banner-eeuu__title">
+<h2>Elecciones en <span>EEUU: seguí toda la</spa> cobertura en Clarín</h2>
+<p id="contador" class="banner-eeuu__counter"></p>
+<img src="https://clarin.com/redaccionfiler/clarin/desarrollo/2020/mundo/elecciones-eeuu-2020/banner/images/btn-seguila.svg" class="banner-eeuu__seguila" alt="Seguí las elecciones 2020">
+</div>
+</div>
+</a>
+<script>
+    const contador = document.getElementById("contador");
+    let setDate = new Date("Nov 4, 2020 00:00:00").getTime();
+    let setToday = new Date().getTime();
+    let daysToGo = setDate - setToday;
+    let daysFormat = Math.floor(daysToGo / (1000 * 60 * 60 * 24));
+    daysToGo > 0 ?
+      contador.innerHTML = "Faltan " + daysFormat + " días"
+      :
+      contador.innerHTML = "" + daysFormat; 
+  </script>
+<style>
+    .banner-eeuu__title h2 {
+      font-family: "Portada-Bold";
+      font-size: 19px;
+      line-height: 21px;
+      color: #fff;
+      text-align: right;
+      margin: 0 0 0 0;
+      width: 95%;
+    }
+    @media (min-width: 411px) {
+      .banner-eeuu__title h2 {
+        width: 100%;
+        margin: 0 0 15px 0;
+      }
+    }
+    @media (min-width: 1024px) {
+      .banner-eeuu__title h2 {
+        text-align: left;
+        max-width: 300px;
+        font-size: 22px;
+        line-height: 26px;
+      }
+    }
+    .banner-eeuu__title h2 span {
+      display: block;
+    }
+    @media (min-width: 411px) {
+      .banner-eeuu__title h2 span {
+        display: inline;
+      }
+    }
+  </style>
+</div>
+<div data-name="contB" class="container  listado  " data-classes="container listado " data-type="container">
+<div class="top-head">
+<div class="row bb-container bb-moduleId_b_mod_202071834781842" data-count="6">
+<div class="full" data-classes="full" data-name="separador">
+<div class="separador-home">
+<p class="heading"><span><a href='https://www.clarin.com/ultimas-noticias/' target='_blank'>Más noticias</a></span></p>
+</div>
+</div>
+<div class="border box col-lg-3 col-md-4 col-sm-6 col-xs-12 no-p list-format" data-size-w="1" data-size-h="1" data-classes="border box col-lg-3 col-md-4 col-sm-6 col-xs-12 no-p list-format" data-name="content">
+<article class="content-nota onexone_foto    list-format">
+<a href="/economia/dolar-hoy-contado-liqui-supera-150-aparecen-agrodolares_0_MRuj8vPxj.html" target="_self">
+<div class="wrap-figure">
+<figure id="imgmod_202092413325777">
+<img class="img-responsive intelResolution lazyload" alt="El dólar blue llegó a los $ 152 y aún no aparecen los agrodólares" data-small="https://images.clarin.com/2020/10/06/VGISugdy3_290x140__1.jpg" data-big="https://images.clarin.com/2020/10/06/VGISugdy3_290x140__1.jpg" src="https://images.clarin.com/collections/static/lazy_square.svg">
+</figure>
+</div>
+<div class="mt ">
+<a href="/economia/dolar-hoy-contado-liqui-supera-150-aparecen-agrodolares_0_MRuj8vPxj.html" target="_self"><p class="volanta ">Mercado cambiario</p></a>
+<a href="/economia/dolar-hoy-contado-liqui-supera-150-aparecen-agrodolares_0_MRuj8vPxj.html" target="_self"><h3>El d&oacute;lar blue lleg&oacute; a los $ 152 y a&uacute;n no aparecen los agrod&oacute;lares</h3></a>
+</div>
+<div class="data-txt">
+<a href="/economia/" target="_self"><p class="section">Economía</p></a>
+</div>
+</a>
+</article>
+</div>
+<div class="border box col-lg-3 col-md-4 col-sm-6 col-xs-12 no-p small-ic list-format" data-size-w="1" data-size-h="1" data-classes="border box col-lg-3 col-md-4 col-sm-6 col-xs-12 no-p" data-name="content">
+<article class="content-nota list-format onexone_foto_small">
+<a href="/politica/medio-pelea-corte-ahora-maximo-tribunal-decision-clave-cristina-kirchner_0_mMSwfjiZL.html" target="_self">
+<div class="mt">
+<p class="volanta ">Conflicto entre Poderes</p>
+<h3>En plena tensi&oacute;n con el Gobierno, ahora la Corte tiene una decisi&oacute;n clave sobre Cristina Kirchner</h3>
+</div>
+<div class="mg">
+<div class="pull-left txt">
+<p class="summary">Debe elegir el fuero en el que se juzgará una causa por sobreprecios. El factor Zannini.</p>
+</div>
+<div class="wrap-figure">
+<figure id="imgmod_202092776634580">
+<img class="img-responsive intelResolution lazyload" alt="En plena tensión con el Gobierno" data-small="/static/CLAClarin/images/isologo_clarin_gris.svg" data-middle="https://images.clarin.com/2020/10/06/NEedK2znb_290x140__1.jpg" data-big="https://images.clarin.com/2020/10/06/NEedK2znb_110x110__1.jpg" src="https://images.clarin.com/collections/static/lazy_square.svg">
+</figure>
+</div>
+</div>
+<div class="data-txt">
+<a href="/politica/" target="_self"><p class="section">Política</p></a>
+<p class="author" onClick="window.open('/autor/lucia-salinas.html','_blank');" style="cursor: pointer;">Lucía Salinas</p>
+</div>
+</a>
+</article>
+</div>
+<div class="des-adv  border box col-lg-3 col-md-4 col-sm-6 col-xs-12 no-p" data-size-w="1" data-size-h="1" data-classes="border box col-lg-3 col-md-4 col-sm-6 col-xs-12 no-p" data-name="advert">
+<p class="pbl">PUBLICIDAD</p>
+<div id="caja2" class="banner_center ad-slot" data-adtype="caja"></div>
+
+</div>
+<div class="border col-lg-3 col-md-4 col-sm-6 col-xs-12 no-p doble-rel" data-classes="border col-lg-3 col-md-4 col-sm-6 col-xs-12 no-p doble-rel" data-size-w="0.5" data-size-h="1" data-name="content">
+<article class="content-nota list-format onexone_doble">
+<a href="/politica/primera-vez-encuesta-electoral-2021-da-arriba-juntos-cambio_0_fVHxprwHQ.html" target="_self">
+<div class="wrap-figure s">
+<figure id="imgmod_202092338345682">
+<img class="img-responsive intelResolution lazyload" alt="Por primera vez" data-small="https://images.clarin.com/2019/08/09/M5prqRMW8_110x110__1.jpg" data-middle="https://images.clarin.com/2019/08/09/M5prqRMW8_290x140__1.jpg" data-big="https://images.clarin.com/2019/08/09/M5prqRMW8_110x110__1.jpg" src="https://images.clarin.com/collections/static/lazy_square.svg">
+</figure>
+</div>
+<div class="mt">
+<a href="/politica/primera-vez-encuesta-electoral-2021-da-arriba-juntos-cambio_0_fVHxprwHQ.html" target="_self">
+<p class="volanta ">Nuevo escenario</p>
+<h2>Por primera vez, una encuesta para el 2021 lo da arriba a Juntos por el Cambio</h2>
+</a>
+</div>
+<div class="data-txt">
+<a href="/politica/" target="_self"><p class="section">Política</p></a>
+<p class="author" onClick="window.open('/autor/eduardo-paladini.html','_blank');" style="cursor: pointer;">Eduardo Paladini</p>
+</div>
+</a>
+</article>
+</div>
+<div class="border col-lg-3 col-md-4 col-sm-6 col-xs-12 no-p doble-rel" data-classes="border col-lg-3 col-md-4 col-sm-6 col-xs-12 no-p doble-rel" data-size-w="0.5" data-size-h="1" data-name="content">
+<article class="content-nota list-format onexone_doble">
+<a href="/rural/fuerte-suba-precio-soja-chicago-trepa-10-dolares-alcanza-valor-maximo-anos_0_6TTwXjc9c.html" target="_self">
+<div class="wrap-figure s">
+<figure id="imgmod_202092303752627">
+<img class="img-responsive intelResolution lazyload" alt="Fuerte suba de la soja: trepa 10 dólares y alcanza el valor máximo en dos años" data-small="https://images.clarin.com/2018/08/14/Bkb4bcxIm_110x110__1.jpg" data-middle="https://images.clarin.com/2018/08/14/Bkb4bcxIm_290x140__1.jpg" data-big="https://images.clarin.com/2018/08/14/Bkb4bcxIm_110x110__1.jpg" src="https://images.clarin.com/collections/static/lazy_square.svg">
+</figure>
+</div>
+<div class="mt">
+<a href="/rural/fuerte-suba-precio-soja-chicago-trepa-10-dolares-alcanza-valor-maximo-anos_0_6TTwXjc9c.html" target="_self">
+<p class="volanta ">En Chicago</p>
+<h2>Fuerte suba de la soja: trepa 10 d&oacute;lares y alcanza el valor m&aacute;ximo en dos a&ntilde;os</h2>
+</a>
+</div>
+<div class="data-txt">
+<a href="/rural/" target="_self"><p class="section">Rural</p></a>
+<p class="author" onClick="window.open('/autor/esteban-fuentes.html','_blank');" style="cursor: pointer;">Esteban Fuentes</p>
+</div>
+</a>
+</article>
+</div>
+<div class="border col-lg-3 col-md-4 col-sm-6 col-xs-12 no-p doble-rel" data-classes="border col-lg-3 col-md-4 col-sm-6 col-xs-12 no-p doble-rel" data-size-w="0.5" data-size-h="1" data-name="content">
+<article class="content-nota list-format onexone_doble">
+<a href="/sociedad/coronavirus-matematica-confirma-provincia-buenos-aires-supero-pico-casos_0_kJi8PNw7K.html" target="_self">
+<div class="wrap-figure s">
+<figure id="imgmod_202092365495295">
+<img class="img-responsive intelResolution lazyload" alt="La Provincia también superó el pico de casos de coronavirus" data-small="https://images.clarin.com/2020/10/05/q_OXrS_F9_110x110__1.jpg" data-middle="https://images.clarin.com/2020/10/05/q_OXrS_F9_290x140__1.jpg" data-big="https://images.clarin.com/2020/10/05/q_OXrS_F9_290x140__1.jpg" src="https://images.clarin.com/collections/static/lazy_square.svg">
+</figure>
+</div>
+<div class="mt">
+<a href="/sociedad/coronavirus-matematica-confirma-provincia-buenos-aires-supero-pico-casos_0_kJi8PNw7K.html" target="_self">
+<p class="volanta ">Cambio de tendencia</p>
+<h2>La Provincia tambi&eacute;n super&oacute; el pico de casos de coronavirus</h2>
+</a>
+</div>
+<div class="data-txt">
+<a href="/sociedad/" target="_self"><p class="section">Sociedad</p></a>
+<p class="author" onClick="window.open('/autor/pablo-sigal.html','_blank');" style="cursor: pointer;">Pablo Sigal</p>
+</div>
+</a>
+</article>
+</div>
+<div class="border col-lg-3 col-md-4 col-sm-6 col-xs-12 no-p doble-rel" data-classes="border col-lg-3 col-md-4 col-sm-6 col-xs-12 no-p doble-rel" data-size-w="0.5" data-size-h="1" data-name="content">
+<article class="content-nota list-format onexone_doble">
+<a href="/politica/dario-nieto-califico-falaz-acusacion-espionaje-ilegal_0_MIkBe5ho7.html" target="_self">
+<div class="wrap-figure s">
+<figure id="imgmod_202092600976494">
+<img class="img-responsive intelResolution lazyload" alt="Darío Nieto calificó de &quot;falaz&quot; la acusación en su contra por espionaje ilegal" data-small="https://images.clarin.com/2020/10/06/3RD9q1pB3_110x110__1.jpg" data-middle="https://images.clarin.com/2020/10/06/3RD9q1pB3_290x140__1.jpg" data-big="https://images.clarin.com/2020/10/06/3RD9q1pB3_290x290__1.jpg" src="https://images.clarin.com/collections/static/lazy_square.svg">
+</figure>
+</div>
+<div class="mt">
+<a href="/politica/dario-nieto-califico-falaz-acusacion-espionaje-ilegal_0_MIkBe5ho7.html" target="_self">
+<p class="volanta ">Causa judicial</p>
+<h2>Dar&iacute;o Nieto calific&oacute; de &ldquo;falaz&rdquo; la acusaci&oacute;n en su contra por espionaje ilegal</h2>
+</a>
+</div>
+<div class="data-txt">
+<a href="/politica/" target="_self"><p class="section">Política</p></a>
+<p class="author" onClick="window.open('/autor/alejandro-alfie.html','_blank');" style="cursor: pointer;">Alejandro Alfie</p>
+</div>
+</a>
+</article>
+</div>
+<div class="border col-lg-3 col-md-4 col-sm-6 col-xs-12 no-p doble-rel" data-classes="border col-lg-3 col-md-4 col-sm-6 col-xs-12 no-p doble-rel" data-size-w="0.5" data-size-h="1" data-name="content">
+<article class="content-nota list-format onexone_doble">
+<a href="/sociedad/controlaron-incendio-norte-cordoba-sigue-activo-fuego-sur-provincia_0_NvBCZP_cl.html" target="_self">
+<div class="wrap-figure s">
+<figure id="imgmod_202092753290475">
+<img class="img-responsive intelResolution lazyload" alt="Controlaron el incendio en el norte de Córdoba" data-small="https://images.clarin.com/2020/10/06/4RD7OaETS_110x110__1.jpg" data-middle="https://images.clarin.com/2020/10/06/4RD7OaETS_290x140__1.jpg" data-big="https://images.clarin.com/2020/10/06/4RD7OaETS_290x290__1.jpg" src="https://images.clarin.com/collections/static/lazy_square.svg">
+</figure>
+</div>
+<div class="mt">
+<a href="/sociedad/controlaron-incendio-norte-cordoba-sigue-activo-fuego-sur-provincia_0_NvBCZP_cl.html" target="_self">
+<p class="volanta ">Tensión en Achiras</p>
+<h2>Controlaron el incendio en el norte de C&oacute;rdoba, pero sigue activo en el sur</h2>
+</a>
+</div>
+<div class="data-txt">
+<a href="/sociedad/" target="_self"><p class="section">Sociedad</p></a>
+</div>
+</a>
+</article>
+</div>
+<div class="border col-lg-3 col-md-4 col-sm-6 col-xs-12 no-p doble-rel" data-classes="border col-lg-3 col-md-4 col-sm-6 col-xs-12 no-p doble-rel" data-size-w="0.5" data-size-h="1" data-name="content">
+<article class="content-nota list-format onexone_doble">
+<a href="/internacional/mexico/fingian-secuestro-tiktok-error-mataron-actrices-pistola-real_0_rgCmlFIEs.html" target="_self">
+<div class="wrap-figure s">
+<figure id="imgmod_202092264108712">
+<img class="img-responsive intelResolution lazyload" alt="Fingían un secuestro para TikTok y por error mataron a una de las actrices" data-small="https://images.clarin.com/2020/10/06/2s6-ugSS-_110x110__1.jpg" data-middle="https://images.clarin.com/2020/10/06/2s6-ugSS-_290x140__1.jpg" data-big="https://images.clarin.com/2020/10/06/2s6-ugSS-_290x290__1.jpg" src="https://images.clarin.com/collections/static/lazy_square.svg">
+</figure>
+</div>
+<div class="mt">
+<a href="/internacional/mexico/fingian-secuestro-tiktok-error-mataron-actrices-pistola-real_0_rgCmlFIEs.html" target="_self">
+<p class="volanta ">Tenía 21 años</p>
+<h2>Fing&iacute;an un secuestro para TikTok y por error mataron a una de las actrices</h2>
+</a>
+</div>
+<div class="data-txt">
+<a href="/internacional/mexico/" target="_self"><p class="section">México</p></a>
+</div>
+</a>
+</article>
+</div>
+</div>
+</div>
+</div>
+
+<div class="border col-lg-12 no-p ds" data-size-w="0" data-size-h="0" data-classes="border col-lg-12 no-p" data-name="content">
+<article class="visual content-nota full_visual txt-bottom">
+<figure id="imgmod_202080392033269">
+<div class="ico-tx-news">
+<a class="content-ico" href="https://www.clarin.com/fotogalerias/coronavirus-mundo-fotos-vida-pandemia-covid19_5_Bn4gx5cL8.html" target="_self">
+<div class="ico">
+<div class="mdia media-pgl"></div>
+</div>
+</a>
+</div>
+<a href="https://www.clarin.com/fotogalerias/coronavirus-mundo-fotos-vida-pandemia-covid19_5_Bn4gx5cL8.html" target="_self">
+<div class="wrap-img">
+{MODULE:BBTComponentQuestionOperatorMO/condition="https://images.clarin.com/collections/static/lazy_square.svg"!=""·trueValue=<img class="img-responsive intelResolution lazyload" alt="Las 83 fotos de la vida en pandemia por el Covid-19" data-small="https://images.clarin.com/2020/10/05/guozMGZ44_290x290__2.jpg#1601944879423" data-mid="https://images.clarin.com/2020/10/05/guozMGZ44_600x290__1.jpg" data-big="https://images.clarin.com/2020/10/05/guozMGZ44_1230x350__2.jpg#1601944838459" src="https://images.clarin.com/collections/static/lazy_square.svg">
+
+</div>
+</a>
+<div class="mt  txt-bottom">
+<a href="https://www.clarin.com/fotogalerias/coronavirus-mundo-fotos-vida-pandemia-covid19_5_Bn4gx5cL8.html" target="_self">
+<div class="max-h">
+<p class="volanta ">Coronavirus en el Mundo</p>
+<h2>Las 83 fotos de la vida en pandemia por el Covid-19</h2>
+</div>
+</a>
+<div class="data-txt">
+<a href="" target="_self"><p class="section"></p></a>
+</div>
+</div>
+</figure>
+</article>
+</div>
+</div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDgyMjQ2NDE1Mjk4IiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiMSJ9.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAxOTYyMjQ4OTE0MDgzIiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiMiJ9.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDMzNDIzMzMwMTk1IiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiMyJ9.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAxODYwMTM2MjE3OTY3IiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiNCJ9.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAxOTMzOTYyMDcwNTkxIiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiNSJ9.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAxOTc2MjU5NzQzODYzIiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiNiJ9.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAxOTExMTQ4NzM2OTEzIiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiNyJ9.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAxODgyMzU3NDY1ODI0IiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiOCJ9.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAxNzgzMjU3ODc3NTE2IiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiOSJ9.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDU2MTE0MDQ0Mzg0IiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiMTAifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDMyNjg5NTU0MDczIiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiMTEifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDQwMTc0MzI0NTg4IiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiMTIifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDU2ODEyNDQyMDIiLCJib2FyZElkIjoiMSIsImJvYXJkVmVyc2lvbklkIjoiMjAyMDEwMDZfMDA4OCIsIm4iOiIxMyJ9.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDU2ODA5ODU5ODgzIiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiMTQifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDQwODcwNDA0MjUzIiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiMTUifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDU2ODE4NTcwODU2IiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiMTYifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAxODYxNTY5MDM5MjgzIiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiMTcifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAxOTEwNDI2MzY4NTY4NiIsImJvYXJkSWQiOiIxIiwiYm9hcmRWZXJzaW9uSWQiOiIyMDIwMTAwNl8wMDg4IiwibiI6IjE4In0=.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDUwMTQ1NjI5ODAiLCJib2FyZElkIjoiMSIsImJvYXJkVmVyc2lvbklkIjoiMjAyMDEwMDZfMDA4OCIsIm4iOiIxOSJ9.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDU2MjQ4OTUyNDAyIiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiMjAifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDU2ODcxNjY5OTM1IiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiMjEifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAxOTEwMDYyNDExODA1OSIsImJvYXJkSWQiOiIxIiwiYm9hcmRWZXJzaW9uSWQiOiIyMDIwMTAwNl8wMDg4IiwibiI6IjIyIn0=.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDYzNzE1ODkxODkzIiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiMjMifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDYyMjU1MTY2MjI3IiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiMjQifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDYzMjU0MjkxMjA5IiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiMjUifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDY0OTYxOTkyNzQ4IiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiMjYifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDg2NTAxODMzNjI3IiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiMjcifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDgwMzQyOTQzNzIyIiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiMjgifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDcxODM0NzgxODQyIiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiMjkifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDgwOTU4MDAwMTA2IiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiMzAifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDgwMTI0NjgxMjY0IiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiMzEifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDgwMTM5ODkyNTY4IiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiMzIifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDgyNjgzMzgxNTQ2IiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiMzMifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDgyOTE1ODM3NTgiLCJib2FyZElkIjoiMSIsImJvYXJkVmVyc2lvbklkIjoiMjAyMDEwMDZfMDA4OCIsIm4iOiIzNCJ9.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDgxNTY1NDMyNzcxIiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiMzUifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDgzNTM0MzQ5OTM4IiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiMzYifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDgyNzgyMzk5Mjg0IiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiMzcifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDg1NzYzMTUxMDE1IiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiMzgifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDg1OTMwMzU2NDQ0IiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiMzkifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDg1ODk1NDU3NzMzIiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiNDAifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDg1MTYzMjU1NTkzIiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiNDEifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDg1ODM4MDY4MDE4IiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiNDIifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDg2OTY0NTk1MzcxIiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiNDMifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDg2MzY0NTc4MjI5IiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiNDQifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDg2OTg1MjI4OTcyIiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiNDUifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDg2NDM5NjU1MzY2IiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiNDYifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDgzNTYxNjU5MDA1IiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiNDcifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDgzODY1NDY4MTg5IiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiNDgifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDgzODkzMDIxMTk0IiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiNDkifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDgyMjg5ODI0MjAiLCJib2FyZElkIjoiMSIsImJvYXJkVmVyc2lvbklkIjoiMjAyMDEwMDZfMDA4OCIsIm4iOiI1MCJ9.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDgzNjc4MjA2OTg4IiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiNTEifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDg1MTE3MTAxOTEwIiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiNTIifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDg1NTM4MDc3NzA4IiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiNTMifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDg1MTUyNTY2MjUzIiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiNTQifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDg2ODIxNTYxMDA5IiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiNTUifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDg2OTcxNTgxMTU5IiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiNTYifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDgyMjY5MTYxNjg4IiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiNTcifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDgyMzg3NTM0Njc4IiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiNTgifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDgxMjU2NjI3MTkzIiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiNTkifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDk0Mzk0ODExMjgzIiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiNjAifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDk0MTE0OTI0ODUzIiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiNjEifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDgzNDU3NTEwMzU4IiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiNjIifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDk0NDU1OTgxMjg1IiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiNjMifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDk0MTIzNTg0MzY3IiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiNjQifQ==.json"></div>
+<div class="on-demand" data-src="/ondemand/eyJtb2R1bGVDbGFzcyI6IkNMQUNsYXJpbkNvbnRhaW5lckJNTyIsImNvbnRhaW5lcklkIjoidjNfY29sZnVsbF9ob21lIiwibW9kdWxlSWQiOiJtb2RfMjAyMDk1NjAwNjcyOTkwIiwiYm9hcmRJZCI6IjEiLCJib2FyZFZlcnNpb25JZCI6IjIwMjAxMDA2XzAwODgiLCJuIjoiNjUifQ==.json"></div>
+</div>
+<script type="text/javascript">
+    $(document).on('domReady.OnDemand', function(event){
+        appSwiper.update();
+        setListadoView();
+        setLazyLoad();
+        cambio();
+    });
+
+	$(document).ready(function(){
+		$('footer').hide();
+	});
+
+    var el = $(".on-demand").first();
+
+    var updateOnDemand = function(e) {
+        e.html('<div class="demand-loading"><i class="fa fa-spinner fa-spin"></i></div>');
+       
+        $(window).unbind("scroll.OnDemand");
+
+        $.get(e.data("src"), function(_response) {
+            response = BBT.fixJson(_response);
+            if (response.error == 0) {
+                e.html(response.data);
+				optaLoader.findWidget();
+
+                if ( e.index() != $(".on-demand").last().index() ) {
+                    el = e.next(".on-demand");
+                    updateBody();
+                }else{
+                    $('footer').show();
+                }
+
+
+                if(typeof(jQuery)=='undefined'){
+                	onDemandEvent = document.createEvent('Event');
+	                onDemandEvent.initEvent('domReady.OnDemand', false, false, undefined);
+	                document.dispatchEvent(onDemandEvent);
+                }else{
+                	$(document).triggerHandler('domReady.OnDemand');
+                }
+                sendRequestToXML();
+            }
+        });
+    }
+
+    var isiPad = navigator.userAgent.match(/iPad/i) != null;
+
+    function checkScroll(e) {
+        var modificacionLimiteScroll = 350;
+
+        if (isiPad && ($(window).height()>=$(window).width())) {
+            modificacionLimiteScroll = 25;
+        };
+
+        if ( ( $(window).scrollTop() + $(window).height() + 5  ) >= ((e.offset().top)) - modificacionLimiteScroll ) {
+            updateOnDemand(e);
+           
+        }
+    }
+
+    function updateBody () {
+        if ($(window).height() >= $("body").height() ) {
+            updateOnDemand(el);
+
+        } else {
+            $('footer').hide();
+            $(window).bind("scroll.OnDemand", function(){
+                checkScroll(el);
+            })
+        }
+    }
+
+	if ( typeof el.html() != "undefined" ){
+	    updateBody();
+         
+	}
+</script>
+<script type="application/javascript">
+
+    function GDPRInit() {
+
+        var scriptJS = document.createElement('script');
+
+        if(scriptJS.readyState) {
+            scriptJS.onreadystatechange = function() {
+                if ( scriptJS.readyState === "loaded" || scriptJS.readyState === "complete" ) {
+                    scriptJS.onreadystatechange = null;
+                    GDPRStart()
+                }
+            };
+        } else{//others
+                scriptJS.onload = function() {
+                GDPRStart()
+                }
+            }
+    scriptJS.src = "/commons/js/GDPRCookiePolicy.js";
+    document.documentElement.appendChild(scriptJS);
+
+    }
+
+    _clarin = {};
+    _clarin.sw = {
+        serviceWorker: null
+    };
+
+    function SWInit() {
+        var _filereC = document.createElement("link")
+        _filereC.setAttribute("rel", "stylesheet")
+        _filereC.setAttribute("type", "text/css")
+        _filereC.setAttribute("href", "/commons/sw/sw-app.css")
+        document.getElementsByTagName("head")[0].appendChild(_filereC);
+
+        var _scripts = [
+            "/commons/sw/firebaseconf.js",
+            "/commons/sw/sw-app.js",
+            "/commons/sw/init.js?v=0.2"];
+
+        for(i=0;i<3;i++) {
+            var _scriptJS = document.createElement('script');
+            _scriptJS.src = _scripts[i];
+            document.documentElement.appendChild(_scriptJS);
+        }
+    }
+
+    $(document).on('wa.ready', function() {
+        var appVersion = navigator.appVersion;
+        var iOS = (/iphone|ipad|ipod/gi).test(appVersion);
+
+        if(!iOS) SWInit();
+    });
+
+</script>
+<div class="scroll-top">
+<i class="fa fa-2x fa-angle-up"></i>
+</div>
+<div class="container">
+<footer class=" flexis" itemscope itemtype="https://schema.org/WPFooter">
+<div class="footer__col">
+<div class="footer__box m20">
+<img width="130" height="30" src="/commons/bundles/clarinsite/images/header/ultimas-noticias-de-argentina-y-el-mundo-clarin.svg" alt="Últimas Noticias de Argentina y el Mundo - Clarín" title="Últimas Noticias de Argentina y el Mundo - Clarín" />
+<p style="margin-top: 13px" class="normal m20">Piedras 1743. C.A.B.A, Argentina</p>
+</div>
+<div class="footer__box m20">
+<p class="normal"><strong>Editor Responsable:</strong> Ricardo Kirschbaum </p>
+<p class="normal"><strong>Registro de Propiedad Intelectual:</strong> 4347221 </p>
+<p class="normal"><strong>Edición Nº:</strong>8951</p>
+<p class="normal">6 de Octubre de 2020</p>
+</div>
+<div class="footer__box m20 ">
+<a onclick="metricsView('BTN_suscribite','boton-suscribite-footer');" href="https://www.clarin.com/suscripciones/landing.html?ob=1" rel="nofollow" class="btn-e-red subscribe" style="display: none;">Suscribite por $10</a>
+</div>
+<div class="footer__box m20 share ">
+<ul>
+<a href="https://www.facebook.com/clarincom/" target="_blank" rel="nofollow"><li class="ico-share fb"><i class="fa fa-facebook text-center" aria-hidden="true"></i></li></a>
+<a href="https://twitter.com/clarincom" target="_blank" rel="nofollow"><li class="ico-share tw"><i class="fa fa-twitter text-center" aria-hidden="true"></i></li></a>
+<a href="//www.clarin.com/rss.html" target="_blank" rel="nofollow"><li class="ico-share rss"><i class="fa fa fa-rss text-center" aria-hidden="true"></i></li></a>
+</ul>
+</div>
+</div>
+<div class="footer__col">
+<div class="footer__box  f__ad m60">
+<ul>
+<p style="margin-bottom: 5px" class="medium"><strong>AREA DIGITAL</strong></p>
+<li><a class="medium" href="https://www.ole.com.ar" target="_blank"> Diario Olé</a><span>+</span></li>
+<li><a class="medium" href="//entremujeres.clarin.com" target="_blank" rel="nofollow">Entremujeres</a><span>+</span></li>
+<li><a class="medium" href="https://www.grandt.clarin.com/" target="_blank" rel="nofollow">Gran Dt</a><span>+</span></li>
+<li><a class="medium" href="https://www.argenprop.com/" target="_blank" rel="nofollow">Argenprop</a><span>+</span></li>
+<li><a class="medium" href="https://guia.clarin.com/" target="_blank" rel="nofollow">Guía Clarín</a><span>+</span></li>
+<li><a class="medium" href="https://www.clasificados.clarin.com/" target="_blank" rel="nofollow">Clasificados</a><span>+</span></li>
+<li><a class="medium" href="https://receptoriaonline.clarin.com/" target="_blank" rel="nofollow">Receptoria Online</a><span>+</span></li>
+<li><a class="medium" href="https://colecciones.clarin.com/" target="_blank" rel="nofollow">Colecciones Clarín</a><span>+</span></li>
+<li><a class="medium" href="https://elle.clarin.com/" target="_blank" rel="nofollow">Elle</a></li>
+</ul>
+<ul>
+<p style="margin-bottom: 5px" class="medium"><strong>GRUPO CLARIN</strong></p>
+<li><a class="medium" href="https://www.grupoclarin.com/" target="_blank">Grupo Clarín</a><span>+</span></li>
+<li><a class="medium" href="https://www.clarin.com/" title="Noticias Clarín">Noticias Clarín</a><span>+</span></li>
+<li><a class="medium" href="https://tn.com.ar/" target="_blank">TN</a><span>+</span></li>
+<li><a class="medium" href="https://www.eltrecetv.com.ar/" target="_blank">El Trece TV</a><span>+</span></li>
+<li><a class="medium" href="https://radiomitre.cienradios.com/" target="_blank">Mitre</a><span>+</span></li>
+<li><a class="medium" href="https://la100.cienradios.com/" target="_blank">La 100</a><span>+</span></li>
+<li><a class="medium" href="https://www.ciudad.com.ar/" target="_blank">Ciudad</a><span>+</span></li>
+<li><a class="medium" href="https://ar.cienradios.com/" target="_blank">Cienradios</a><span>+</span></li>
+<li><a class="medium " href="https://www.tycsports.com/" target="_blank">TyCSports</a><span>+</span></li>
+<li><a class="medium" href="https://www.lavoz.com.ar/" target="_blank">La Voz del Interior</a><span>+</span></li>
+<li><a class="medium" href="https://www.losandes.com.ar/" target="_blank">Los Andes</a><span>+</span></li>
+<li><a class="medium " href="https://www.viapais.com.ar/" target="_blank">ViaPais</a><span>+</span></li>
+<li><a class="medium" href="https://www.rumbosdigital.com/" target="_blank">Rumbos</a><span></span></li>
+</ul>
+<ul>
+<p style="margin-bottom: 5px" class="medium"><strong>PUBLICIDAD</strong></p>
+<li><a class="medium" href="https://comercial.agea.com.ar/" target="_blank">ANÚNCIESE CON NOSOTROS</a></li>
+</ul>
+</div>
+</div>
+<div class="footer__col">
+<div class="links footer__box m20 m60">
+<ul>
+<li><a class="modal-legales medium  upper" href="#" rel="nofollow" data-path="/getTerminos.json"><strong>Términos y condiciones</strong></a></li>
+<li><a class="modal-legales medium  upper" href="#" rel="nofollow" data-path="/getProteccion.json"><strong>Política de protección de datos personales</strong></a></li>
+<li><a class="modal-legales medium  upper" href="#" rel="nofollow" data-path="/getNormas.json"><strong>Normas de confidencialidad y privacidad</strong></a></li>
+<li><a class="medium  upper" onclick="metricsView('BTN_sitemap','boton-sitemap-footer');" href="https://www.clarin.com/commons/sitemap"><strong>Mapa del sitio</strong></a></li>
+<li><a class="medium  upper" href="//www.clarin.com/contactenos.html" rel="nofollow"><strong>Contáctenos</strong></a></li>
+<li><a class="medium  upper" href="//www.clarin.com/preguntas-frecuentes" rel="nofollow"><strong>Ayuda</strong></a></li>
+<li><a class="medium  upper" href="//www.clarin.com/ediciones-anteriores" rel="nofollow"><strong>Archivo</strong></a></li>
+</ul>
+</div>
+</div>
+<div class="footer__col">
+<ul class="m60">
+<li>
+<p class="medium">Registro Propiedad Intelectual: 4347221. Propietario Arte Gráfico Editorial Argentino S.A. © 1996-2020 Clarín.com - Clarín Digital - Todos los derechos reservados.</p>
+</li>
+<li class="m20">
+<a class="afip" href="http://qr.afip.gob.ar/?qr=qy9BfPZjufnExnl8h25PyA,," target="_blank">&nbsp;</a> <p class="medium">Información fiscal</p>
+</li>
+</ul>
+</div>
+</footer>
+</div>
+<script type="text/javascript">
+
+    $(".links .modal-legales").click(function(e) {
+      
+        var path = $(this).attr("data-path");
+        $.magnificPopup.open({
+            closeOnBgClick: false,
+            closeBtnInside:false,
+            overflowY: 'scroll',
+            alignTop: true,
+            items: {
+                src: path,
+                type: 'ajax'
+            },
+            callbacks: {
+                close: function() {
+                    window.location.hash='';
+                },
+                open: function() {
+                    $('.mfp-bg').addClass('modal-terminos');
+                    $('.mfp-content').addClass('modal-terminos');
+                    $('.mfp-close').addClass('modal-terminos-close');
+                }
+            }
+        });
+    });
+
+</script>
+</div>
+<div id="horizon">
+<div id="epl_impact_div"></div>
+</div>
+<script type="text/javascript">
+
+    var GDPRv;
+
+    if(typeof $.cookie("cookieconsent_status") == "undefined"){
+        GDPRv = "-2";
+    }else{
+        if($.cookie("cookieconsent_status") == "deny"){
+            GDPRv = "0";
+        }
+        if($.cookie("cookieconsent_status") == "allow"){
+            GDPRv = "1";
+        }
+    }
+
+    document.body.dataset.adspath = 'clarin/home';
+    var adskv = {
+        section: ["home"],
+        kw_referer: [document.referrer],
+        kw_ck: GDPRv,
+        kw_pw: [sasClarinHelper.getKwPw()],
+        kw_temperatura: [sasClarinHelper.getTemperatura()],
+        kw_pw_counter: [sasClarinHelper.getPaseCounter()],
+        kw_time: [Date.now()],
+        kw_choque: [sasClarinHelper.getPaywallChoque()],
+        kw_width: [window.screen.availWidth],
+        kw_height: [window.screen.availHeight],
+        kw_keywords: [],
+        kw_tags: [],
+        kw_login_edad: [],
+        kw_login_sexo: [],
+    };
+    document.body.dataset.adskv = JSON.stringify(adskv);
+
+    function triggerRenderAds(event){
+        if(typeof ads != 'undefined'){
+           ads.pending();
+        }
+    }
+
+    function loadAdScript(){
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = "https://static.clarin.com/commons/config.js?v1.19";
+        document.head.appendChild(s);
+    }
+
+    $(document).on('wa.ready', function(){
+        var _user = WAuth.getUserSync();
+
+        if(_user) {
+            var kvObject = JSON.parse(document.body.dataset.adskv);
+            $.extend(kvObject, {
+                "kw_login_edad": [sasClarinHelper.getAge(_user.fechaNacimiento)],
+                "kw_login_sexo": [_user.genero]
+            });
+            document.body.dataset.adskv = JSON.stringify(kvObject);
+        }
+
+        loadAdScript();
+    });
+
+    if(typeof(jQuery)=="undefined"){
+        document.addEventListener('domReady.OnDemand', function(event){
+            triggerRenderAds(event);
+        });
+    }else{
+        $(document).on('domReady.OnDemand', function(event){
+            triggerRenderAds(event);
+        });
+    }
+
+    sasClarinHelper.pushDataGTM();
+</script>
+<script type="text/javascript">
+    var refreshChecker = {
+            init : function () {
+                var data =  this.getValueFromCookie("autorefresh").split("|");
+                if ( data[0] == '' || data[0] != window.location.pathname) {
+                    this.setValueToCookie("autorefresh",window.location.pathname + "|0");
+                } else if (data[0] == window.location.pathname  &&  data[1] == "0" ) {
+                    this.setValueToCookie("autorefresh", window.location.pathname + "|1");
+                }
+            },
+            getValueFromCookie :function (cookieName)
+            {
+                var reg = cookieName + '\\=([^\\;]+)';
+                var matches = document.cookie.match(new RegExp(reg));
+                return matches != null && matches.length > 1 ? matches[1] : '';
+            },
+            setValueToCookie: function (cookieName, value) {
+                document.cookie = cookieName + "=" + value + ";path=/;";
+            },
+
+            delete_cookie: function (name) {
+                document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/;';
+            },
+            isAutorefresh: function () {
+                var data = this.getValueFromCookie("autorefresh").split("|");
+                return typeof data[1] != 'undefined' ? data[1] : "0";
+            },
+    }
+    refreshChecker.init();
+</script>
+<script type="text/javascript" src="https://static.clarin.com/static/CLAClarin/js/ads.js"></script>
+<script defer type="text/javascript" src="https://static.clarin.com/static/DESDax/js/desdaxcallminimalmo.min.js?hash=7f6e4da58476acdee51cbcedb7f17036" data-params="%7B%22siteName%22%3A%22clarin%22%2C%22siteId%22%3A%226906409%22%2C%22sectionId%22%3A%221%22%2C%22day%22%3A%22%22%2C%22month%22%3A%22%22%2C%22hours%22%3A%22%22%2C%22weekDay%22%3A%22%22%2C%22urlDate%22%3A%22%22%2C%22timestamp%22%3Anull%2C%22path%22%3A%22home.inicio%22%2C%22sourceModal%22%3A%22home%22%7D" id="daxscript"></script>
+<script type="text/javascript" src="https://static.clarin.com/commons/js/wa.js"></script>
+<script type="text/javascript" src="https://static.clarin.com/commons/js/weizenbock.js?1.6"></script>
+<script type="text/javascript" src="https://static.clarin.com/static/DESPase/js/despasescriptmo.min.js?hash=214fd71f114196d5790ac92bfe959804" id="despasescriptmo"></script>
+<script type="text/javascript">
+
+    var uiconf = "23448755";
+    var wid = "_102";
+    var cargo = false;
+
+    var settings = {
+        uiconf:uiconf,
+        wid:wid,
+        src:"https://vodgc.com/p/102/sp/10200/embedIframeJs/uiconf_id/23448755/partner_id/102"
+    };
+
+    $(document).bind('cbox_complete', function(){
+        settings.reload = true;
+        settings.embed_class = "kaltura_modal";
+        $.kLoader(settings);
+        settings.embed_class = "kaltura_player";
+        $.kLoader(settings);
+    });
+    $.kLoader(settings);
+</script>
+<script type="text/javascript" src="//tags.crwdcntrl.net/c/9602/cc.js?ns=_cc9602" id="LOTCC_9602" onload="_cc9602.bcp();" defer> </script>
+
+<iframe name="__bkframe" height="0" width="0" frameborder="0" style="display:none;position:absolute;clip:rect(0px 0px 0px 0px)" src="about:blank"></iframe>
+<script type="text/javascript" src="//tags.bkrtx.com/js/bk-coretag.js"></script>
+<script type="text/javascript">
+    bk_allow_multiple_calls=true;
+    bk_use_multiple_iframes=true;
+    bk_is_debug=true;
+
+    function sendBlueKai(){
+        try{
+
+            var GDPRv;
+
+            if(typeof $.cookie("cookieconsent_status") == "undefined"){
+                GDPRv = "-2";
+            }else{
+                if($.cookie("cookieconsent_status") == "deny"){
+                    GDPRv = "0";
+                }
+                if($.cookie("cookieconsent_status") == "allow"){
+                    GDPRv = "1";
+                }
+            }
+
+            if(typeof(window.WAuth) == "undefined")
+                throw 'waiting WAuth';
+
+            if(typeof(window.isPrivateMode) == "undefined")
+                throw 'waiting bprivate';
+            
+            var _weizenbockUser = WAuth.getUserSync();
+            if(_weizenbockUser){
+                bk_addEmailHash(_weizenbockUser.email);
+            }else{
+                bk_addEmailHash("-2");
+            }
+
+            bk_addPageCtx('bajada', "-2");
+            bk_addPageCtx('kw_ck', GDPRv);
+            bk_addPageCtx('section', 'home');
+            bk_addPageCtx('tipo_pagina', 'home');
+            bk_addPageCtx('ns_site', 'clarin');
+            bk_addPageCtx('name', 'home.inicio');
+            bk_addPageCtx('ET_multimedia', '-2');
+            bk_addPageCtx('kw_referrer', [document.referrer]);
+            bk_addPageCtx('keywords', []);
+            bk_addPageCtx('tags', []);
+            bk_addPageCtx('bprivate', window.isPrivateMode);
+            bk_addPageCtx('idPase', getValueFromCookie('idPase')=='' ? "-2" : getValueFromCookie('idPase'));
+            bk_addPageCtx('pase_sexo', _weizenbockUser ? _weizenbockUser.genero : "-2");
+            bk_addPageCtx('pase_edad', _weizenbockUser ? sasClarinHelper.getAge(_weizenbockUser.fechaNacimiento) : "-2");
+            bk_addPageCtx('contador_gral', sasClarinHelper.getPaseCounter());
+            bk_addPageCtx('block_LW', sasClarinHelper.getPaseStatusSW() ? "si" : "no");
+            bk_addPageCtx('block_PW', 'no');
+            bk_addPageCtx('tipo_suscriptor', sasClarinHelper.getTipoSuscripcion("-2"));
+            bk_addPageCtx('tipo_lector', sasClarinHelper.getTipoLector());
+            bk_addPageCtx('kw_pw_counter', sasClarinHelper.getPaseCounter());
+            bk_addPageCtx('kw_choque', sasClarinHelper.getPaywallChoque());
+            bk_doJSTag(66466, 1);
+        } catch(e) {
+            setTimeout(function(){
+                sendBlueKai();
+            }, 200);
+        }
+    }
+    sendBlueKai();
+</script>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v2.4&appId=173748289375719";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<script type="text/javascript">
+window.onload = function () {
+    optaLoader.findWidget();
+}
+</script>
+<script type="text/javascript">
+(function(cid,mkt,config,domain) {
+  var ml = document.createElement('script');
+  var s = document.getElementsByTagName('script')[0] || document.head;
+  var cb;
+
+  try {
+    if (!(cb = localStorage._matherVer)) {
+      throw false;
+    }
+  } catch (e) {
+    cb = Math.round(new Date() / 1.0368e9);
+  }
+
+  ml.type = 'text/javascript'; ml.async = true; ml.defer = true; ml.id = '_mljs';
+  ml.src = ('https:' == window.location.protocol ? 'https' : 'http') + '://' + (domain || 'js.matheranalytics.com/s') + '/' + cid + '/' + mkt + '/' + (config ? config + '/' : '') + 'ml.js?cb=' + cb;
+  s.parentNode.insertBefore(ml, s);
+})('ma33005','978583300','');
+</script>
+<script type='text/javascript'>
+      var _sf_async_config = _sf_async_config || {};
+      /** CONFIGURATION START **/
+      _sf_async_config.authors = 'clarin';
+
+      _cbq = window._cbq = (window._cbq || []);
+      // acct : Guest:  'anon' || Registered: 'lgdin' || Subscriber: 'paid'
+      _cbq.push(['_acct', getChartbeatUserType()]);
+      /** CONFIGURATION END **/
+      function loadChartbeat() {
+          window._sf_endpt = (new Date()).getTime();
+          var e = document.createElement('script');
+          e.setAttribute('language', 'javascript');
+          e.setAttribute('type', 'text/javascript');
+          e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
+          document.body.appendChild(e);
+      }
+      loadChartbeat();
+</script>
+</body>
+</html>
