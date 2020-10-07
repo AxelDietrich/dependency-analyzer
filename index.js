@@ -32,7 +32,6 @@ function logDependenciesCount(dependenciesCountMap) {
 function logDependenciesAndGetDependenciesCount(htmlsSet) {
 
     let dependenciesCountMap = new Map();
-    let dependencies = []
     htmlsSet.forEach(function (value, key, htmlsSet) {
         let dep = parser.parse(value);
         dep = dep.querySelectorAll("script");
@@ -88,7 +87,6 @@ function readWebsitesFile() {
 async function logFilesLength(htmlSet){
 
     htmlSet.forEach(function (value, key, htmlSet) {
-        let prueba = Buffer.byteLength(value);
         console.log(key + ", " + Buffer.byteLength(value));
     })
 }
